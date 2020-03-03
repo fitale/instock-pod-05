@@ -1,0 +1,221 @@
+@import "./colors";
+@import "./fonts";
+@import "./flex-mixins";
+@import "./breakpoints";
+
+
+
+.header {
+    width: 100vw;
+    height: 80px;
+    background-color: $para-and-nav;
+    margin-bottom: 0px; 
+
+    &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    }
+
+    &__anchor {
+        margin-top: .5rem;
+    }
+
+    &__logo {
+        margin: 10px auto;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.navigation {
+    width: 20rem;
+    display: flex;
+    justify-content: space-evenly;
+    height: 45px;
+    margin-top: 3px;
+}
+
+    .navigation__options {
+        width: 80%;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;    
+        color: $text-label;
+        padding-top: 1rem;
+        border-bottom: 5px $white ;
+
+        a, &-text {
+            font-family: avenir-next-demi;
+            margin-top: 0;
+            font-size: .8125rem;
+            line-height: 1.125rem;  
+            text-decoration: none;
+            color: $text-label;
+        }
+
+    &:hover {
+        color: $white;
+        border-bottom: 5px $white solid;
+ 
+    }
+}
+
+
+/*tablet breakpoint*/
+
+@include medium {
+    .header {
+        width: 100%;
+        height: 80px;
+        background-color: $para-and-nav;
+        display: flex;
+        align-items: center;
+
+        &__medium {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 100%;
+            display: flex;
+        }
+    
+        &__container {
+        display: flex;
+        justify-content: center;
+        width: 150px;
+        height: 50px;
+        padding-bottom: 15px;
+        }
+
+        &__anchor {
+            padding-bottom: 15px;
+        }
+    
+        &__logo {
+            width: 155px;
+            display: flex;
+            justify-content: center;
+            padding-top: 1rem;
+            padding-left: 1.5rem;
+        }
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-evenly;       
+        height: 100%;
+    }
+    
+        .navigation__options {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            justify-content: center;  
+            color: $text-label;
+            border-bottom: 5px $white;
+            padding-top: 2.3rem;
+        
+        
+    
+        &:hover {
+            color: $white;
+            border-bottom: 5px $white solid;
+            margin-bottom: 0px; 
+        }
+    
+            &__options-text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                line-height: 32px;
+                font-family: avenir-next-demi;
+                text-decoration: none;
+                color: $text-label;
+                margin-bottom: 0px; 
+            }
+    }
+
+
+
+
+/*desktop breakpoint*/
+@include huge {
+    .header {
+        width: 100%;
+        height: 80px;
+        background-color: $para-and-nav;
+
+        &__header-medium {
+        height: 100%;
+        display: flex;
+        justify-content: start;
+        }
+    
+        &__container {
+        height: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-bottom: 15px;
+        margin-top: 10px;
+        margin-left: 11.25rem;
+        }
+    
+        &__logo {
+            width: 150px;
+            margin-right: 3.5rem;   
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: start;
+            align-items: baseline;
+            padding-left: 0;
+            
+        }
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 350px;
+        height: 100%;
+        padding: 0;
+    }
+    
+    &__options  {
+        width: 20%;
+        height: 100px;
+        margin: 0px 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $text-label;
+        border-bottom: 5px $white;
+        
+    
+        .navigation__options:hover {
+            color: $white;
+            border-bottom: 5px $white solid;
+        }
+    
+        a, &__options-text {
+            width: 70px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-family: avenir-next-demi;
+            text-decoration: none;
+            color: $text-label;
+        }
+    }
+    }   
+}
