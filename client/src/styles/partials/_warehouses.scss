@@ -1,0 +1,44 @@
+.warehouses {
+  @include flex-row-wrap;
+
+  &__header-text {
+    @include mobile-header;
+  }
+}
+.main__warehouses {
+  padding: 32px 24px 0px 24px;
+}
+.warehouse {
+  @include flex-row-nowrap;
+  border-bottom: 2px grey solid;
+  padding: 24px 0px;
+
+  &__left {
+    width: 80vw;
+  }
+  &__right {
+    width: 20vw;
+  }
+  &__arrow {
+    padding: 24px 0px 0px 0px;
+  }
+  &__block {
+    @include flex-row-wrap;
+    padding: 24px 0px 0px 0px;
+  }
+  &__field {
+    @include flex-row-nowrap;
+    width: 100vw;
+  }
+  &__title {
+    @include mobile-subheader;
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+  &__first {
+    padding: 8px 0px 0px 0px;
+  }
+  &__contact-title {
+    font-style: italic;
+  }
+}
