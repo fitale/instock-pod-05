@@ -7,35 +7,32 @@ export default class Inventory extends Component {
   render() {
     return (
       <main className="inventory">
-        <h1 className="inventory__title">Inventory</h1>
         <div className="inventory__upper">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="inventory__upper--input"
-          />
-          <img
-            src={searchIcon}
-            alt="searchicon"
-            className="inventory__upper--search-icon"
-          />
+          <h1 className="inventory__upper--title">Inventory</h1>
+          <div className="inventory__upper--input">
+            <input type="text" placeholder="Search..." className="input" />
+            <img src={searchIcon} alt="searchicon" className="search-icon" />
+          </div>
+        </div>
+        <div className="inventory__titles">
+          <h5 className="inventory__titles--item">ITEM</h5>
+          <h5 className="inventory__titles--item">LAST ORDERED</h5>
+          <h5 className="inventory__titles--item">LOCATION</h5>
+          <h5 className="inventory__titles--item">QUANTITY</h5>
+          <h5 className="inventory__titles--item">STATUS</h5>
+          <h5 className="inventory__titles--item"></h5>
         </div>
         <div className="inventory__content">
-          <div className="inventory__content--titles">
-            <h5 className="titles">ITEM</h5>
-            <h5 className="titles">LAST ORDERED</h5>
-            <h5 className="titles">LOCATION</h5>
-            <h5 className="titles">QUANTITY</h5>
-            <h5 className="titles">STATUS</h5>
-          </div>
           <div className="inventory__content--data">
-            <h5 className="title">ITEM</h5>
-            <h2 className="product-name">Product Name Here</h2>
-            <h4 className="text">
-              Here is a very brief description of the product name, its uses,
-              industries and possible attributes that could be used to describe
-              the product.
-            </h4>
+            <div className="container">
+              <h5 className="title">ITEM</h5>
+              <h2 className="product-name">Product Name Here</h2>
+              <h4 className="text flex-grow">
+                Here is a very brief description of the product name, its uses,
+                industries and possible attributes that could be used to
+                describe the product.
+              </h4>
+            </div>
             <h5 className="title">LAST ORDERED</h5>
             <h4 className="text">05/24/2020</h4>
             <h5 className="title">LOCATION</h5>
@@ -54,21 +51,16 @@ export default class Inventory extends Component {
         </div>
         {/* second div  */}
         <div className="inventory__content">
-          <div className="inventory__content--titles">
-            <h5 className="titles">ITEM</h5>
-            <h5 className="titles">LAST ORDERED</h5>
-            <h5 className="titles">LOCATION</h5>
-            <h5 className="titles">QUANTITY</h5>
-            <h5 className="titles">STATUS</h5>
-          </div>
           <div className="inventory__content--data">
-            <h5 className="title">ITEM</h5>
-            <h2 className="product-name">Product Name Here</h2>
-            <h4 className="text">
-              Here is a very brief description of the product name, its uses,
-              industries and possible attributes that could be used to describe
-              the product.
-            </h4>
+            <div className="container">
+              <h5 className="title">ITEM</h5>
+              <h2 className="product-name">Product Name Here</h2>
+              <h4 className="text">
+                Here is a very brief description of the product name, its uses,
+                industries and possible attributes that could be used to
+                describe the product.
+              </h4>
+            </div>
             <h5 className="title">LAST ORDERED</h5>
             <h4 className="text">05/24/2020</h4>
             <h5 className="title">LOCATION</h5>
@@ -84,21 +76,16 @@ export default class Inventory extends Component {
         </div>
         {/* third div  */}
         <div className="inventory__content">
-          <div className="inventory__content--titles">
-            <h5 className="titles">ITEM</h5>
-            <h5 className="titles">LAST ORDERED</h5>
-            <h5 className="titles">LOCATION</h5>
-            <h5 className="titles">QUANTITY</h5>
-            <h5 className="titles">STATUS</h5>
-          </div>
           <div className="inventory__content--data">
-            <h5 className="title">ITEM</h5>
-            <h2 className="product-name">Product Name Here</h2>
-            <h4 className="text">
-              Here is a very brief description of the product name, its uses,
-              industries and possible attributes that could be used to describe
-              the product.
-            </h4>
+            <div className="container">
+              <h5 className="title">ITEM</h5>
+              <h2 className="product-name">Product Name Here</h2>
+              <h4 className="text">
+                Here is a very brief description of the product name, its uses,
+                industries and possible attributes that could be used to
+                describe the product.
+              </h4>
+            </div>
             <h5 className="title">LAST ORDERED</h5>
             <h4 className="text">05/24/2020</h4>
             <h5 className="title">LOCATION</h5>
@@ -114,21 +101,16 @@ export default class Inventory extends Component {
         </div>
         {/* fourth div  */}
         <div className="inventory__content">
-          <div className="inventory__content--titles">
-            <h5 className="titles">ITEM</h5>
-            <h5 className="titles">LAST ORDERED</h5>
-            <h5 className="titles">LOCATION</h5>
-            <h5 className="titles">QUANTITY</h5>
-            <h5 className="titles">STATUS</h5>
-          </div>
           <div className="inventory__content--data">
-            <h5 className="title">ITEM</h5>
-            <h2 className="product-name">Product Name Here</h2>
-            <h4 className="text">
-              Here is a very brief description of the product name, its uses,
-              industries and possible attributes that could be used to describe
-              the product.
-            </h4>
+            <div className="container">
+              <h5 className="title">ITEM</h5>
+              <h2 className="product-name">Product Name Here</h2>
+              <h4 className="text">
+                Here is a very brief description of the product name, its uses,
+                industries and possible attributes that could be used to
+                describe the product.
+              </h4>
+            </div>
             <h5 className="title">LAST ORDERED</h5>
             <h4 className="text">05/24/2020</h4>
             <h5 className="title">LOCATION</h5>
@@ -144,21 +126,16 @@ export default class Inventory extends Component {
         </div>
         {/* fifth div  */}
         <div className="inventory__content">
-          <div className="inventory__content--titles">
-            <h5 className="titles">ITEM</h5>
-            <h5 className="titles">LAST ORDERED</h5>
-            <h5 className="titles">LOCATION</h5>
-            <h5 className="titles">QUANTITY</h5>
-            <h5 className="titles">STATUS</h5>
-          </div>
           <div className="inventory__content--data">
-            <h5 className="title">ITEM</h5>
-            <h2 className="product-name">Product Name Here</h2>
-            <h4 className="text">
-              Here is a very brief description of the product name, its uses,
-              industries and possible attributes that could be used to describe
-              the product.
-            </h4>
+            <div className="container">
+              <h5 className="title">ITEM</h5>
+              <h2 className="product-name">Product Name Here</h2>
+              <h4 className="text">
+                Here is a very brief description of the product name, its uses,
+                industries and possible attributes that could be used to
+                describe the product.
+              </h4>
+            </div>
             <h5 className="title">LAST ORDERED</h5>
             <h4 className="text">05/24/2020</h4>
             <h5 className="title">LOCATION</h5>
@@ -174,21 +151,16 @@ export default class Inventory extends Component {
         </div>
         {/* sixth div  */}
         <div className="inventory__content">
-          <div className="inventory__content--titles">
-            <h5 className="titles">ITEM</h5>
-            <h5 className="titles">LAST ORDERED</h5>
-            <h5 className="titles">LOCATION</h5>
-            <h5 className="titles">QUANTITY</h5>
-            <h5 className="titles">STATUS</h5>
-          </div>
           <div className="inventory__content--data">
-            <h5 className="title">ITEM</h5>
-            <h2 className="product-name">Product Name Here</h2>
-            <h4 className="text">
-              Here is a very brief description of the product name, its uses,
-              industries and possible attributes that could be used to describe
-              the product.
-            </h4>
+            <div className="container">
+              <h5 className="title">ITEM</h5>
+              <h2 className="product-name">Product Name Here</h2>
+              <h4 className="text">
+                Here is a very brief description of the product name, its uses,
+                industries and possible attributes that could be used to
+                describe the product.
+              </h4>
+            </div>
             <h5 className="title">LAST ORDERED</h5>
             <h4 className="text">05/24/2020</h4>
             <h5 className="title">LOCATION</h5>
@@ -204,21 +176,16 @@ export default class Inventory extends Component {
         </div>
         {/* seventh div  */}
         <div className="inventory__content">
-          <div className="inventory__content--titles">
-            <h5 className="titles">ITEM</h5>
-            <h5 className="titles">LAST ORDERED</h5>
-            <h5 className="titles">LOCATION</h5>
-            <h5 className="titles">QUANTITY</h5>
-            <h5 className="titles">STATUS</h5>
-          </div>
           <div className="inventory__content--data">
-            <h5 className="title">ITEM</h5>
-            <h2 className="product-name">Product Name Here</h2>
-            <h4 className="text">
-              Here is a very brief description of the product name, its uses,
-              industries and possible attributes that could be used to describe
-              the product.
-            </h4>
+            <div className="container">
+              <h5 className="title">ITEM</h5>
+              <h2 className="product-name">Product Name Here</h2>
+              <h4 className="text">
+                Here is a very brief description of the product name, its uses,
+                industries and possible attributes that could be used to
+                describe the product.
+              </h4>
+            </div>
             <h5 className="title">LAST ORDERED</h5>
             <h4 className="text">05/24/2020</h4>
             <h5 className="title">LOCATION</h5>
@@ -234,21 +201,16 @@ export default class Inventory extends Component {
         </div>
         {/* eighth div */}
         <div className="inventory__content">
-          <div className="inventory__content--titles">
-            <h5 className="titles">ITEM</h5>
-            <h5 className="titles">LAST ORDERED</h5>
-            <h5 className="titles">LOCATION</h5>
-            <h5 className="titles">QUANTITY</h5>
-            <h5 className="titles">STATUS</h5>
-          </div>
           <div className="inventory__content--data">
-            <h5 className="title">ITEM</h5>
-            <h2 className="product-name">Product Name Here</h2>
-            <h4 className="text">
-              Here is a very brief description of the product name, its uses,
-              industries and possible attributes that could be used to describe
-              the product.
-            </h4>
+            <div className="container">
+              <h5 className="title">ITEM</h5>
+              <h2 className="product-name">Product Name Here</h2>
+              <h4 className="text">
+                Here is a very brief description of the product name, its uses,
+                industries and possible attributes that could be used to
+                describe the product.
+              </h4>
+            </div>
             <h5 className="title">LAST ORDERED</h5>
             <h4 className="text">05/24/2020</h4>
             <h5 className="title">LOCATION</h5>
@@ -265,21 +227,16 @@ export default class Inventory extends Component {
         {/* ninth div */}
 
         <div className="inventory__content">
-          <div className="inventory__content--titles">
-            <h5 className="titles">ITEM</h5>
-            <h5 className="titles">LAST ORDERED</h5>
-            <h5 className="titles">LOCATION</h5>
-            <h5 className="titles">QUANTITY</h5>
-            <h5 className="titles">STATUS</h5>
-          </div>
           <div className="inventory__content--data">
-            <h5 className="title">ITEM</h5>
-            <h2 className="product-name">Product Name Here</h2>
-            <h4 className="text">
-              Here is a very brief description of the product name, its uses,
-              industries and possible attributes that could be used to describe
-              the product.
-            </h4>
+            <div className="container">
+              <h5 className="title">ITEM</h5>
+              <h2 className="product-name">Product Name Here</h2>
+              <h4 className="text">
+                Here is a very brief description of the product name, its uses,
+                industries and possible attributes that could be used to
+                describe the product.
+              </h4>
+            </div>
             <h5 className="title">LAST ORDERED</h5>
             <h4 className="text">05/24/2020</h4>
             <h5 className="title">LOCATION</h5>

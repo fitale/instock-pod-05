@@ -24,19 +24,20 @@
   margin: 32px 16px 20px;
 }
 
-.inventory__title {
+.inventory__upper--title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: AvenirBold;
   margin-bottom: 16px;
-}
-
-.inventory__upper {
-  position: relative;
-  margin-bottom: 32px;
+  color: #323232;
 }
 
 .inventory__upper--input {
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.inventory__upper--input .input {
   background-color: #fafafa;
   border: 1px solid #e1e1e1;
   border-radius: 4px;
@@ -44,19 +45,23 @@
   height: 48px;
 }
 
-.inventory__upper--input:placeholder-shown {
+.inventory__upper--input .input:placeholder-shown {
   padding-left: 35px;
   font-family: AvenirRegular;
 }
 
-.inventory__upper--input:hover {
+.inventory__upper--input .input:hover {
   border: 1px solid #002f5f;
 }
 
-.inventory__upper--search-icon {
+.inventory__upper--input .search-icon {
   position: absolute;
+  top: 12px;
   left: 10px;
-  top: 15px;
+}
+
+.inventory__titles {
+  display: none;
 }
 
 .inventory__content {
@@ -72,8 +77,11 @@
   border-bottom: 2px solid #e1e1e1;
 }
 
-.inventory__content--titles {
-  display: none;
+.inventory__content--data .container .product-name {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: AvenirDemi;
+  margin-top: 16px;
 }
 
 .inventory__content--data .title {
@@ -81,13 +89,6 @@
   line-height: 1.25rem;
   font-family: AvenirDemi;
   color: #afafaf;
-}
-
-.inventory__content--data .product-name {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-family: AvenirDemi;
-  margin-top: 16px;
 }
 
 .inventory__content--data .text {
@@ -133,6 +134,153 @@
 
 .inventory__content--icon .fixed__add-icon {
   width: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .inventory {
+    margin: 32px 24px 0;
+  }
+  .inventory__upper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .inventory__upper--title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: AvenirBold;
+  }
+  .inventory__upper--input .input {
+    width: 148px;
+    height: 40px;
+    outline: none;
+  }
+  .inventory__titles {
+    display: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-family: AvenirDemi;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    color: #afafaf;
+  }
+  .inventory__content {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100px;
+  }
+  .inventory__content--data {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 720px;
+  }
+  .inventory__content--data .title {
+    display: none;
+  }
+  .inventory__content--data .container {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .inventory__content--data .container .product-name {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: AvenirDemi;
+    margin: unset;
+  }
+  .inventory__content--data .text {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: AvenirRegular;
+    width: 180px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin: 0;
+  }
+  .inventory__content--icon {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .inventory {
+    margin: 48px 180px;
+  }
+  .inventory__upper--title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-family: AvenirBold;
+    margin-bottom: 48px;
+  }
+  .inventory__upper--input .input {
+    width: 252px;
+    height: 48px;
+  }
+  .inventory__upper--input .input:placeholder-shown {
+    padding-left: 43px;
+    font-family: AvenirRegular;
+  }
+  .inventory__upper--input .search-icon {
+    position: absolute;
+    top: 15px;
+    left: 16px;
+  }
+  .inventory__titles {
+    margin-bottom: 8pxpx;
+  }
+  .inventory__content {
+    height: 80px;
+  }
+  .inventory__content--data {
+    width: 1080px;
+  }
+  .inventory__content--data .container {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .inventory__content--icon .default-icon {
+    height: 20px;
+    margin-bottom: 30px;
+  }
 }
 
 .warehouses {
