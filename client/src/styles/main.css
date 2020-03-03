@@ -20,6 +20,121 @@
   src: url("../assets/font/AvenirNextLTProThin.otf");
 }
 
+.inventory {
+  margin: 32px 16px 20px;
+}
+
+.inventory__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: AvenirBold;
+  margin-bottom: 16px;
+}
+
+.inventory__upper {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.inventory__upper--input {
+  background-color: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  width: 70vw;
+  height: 48px;
+}
+
+.inventory__upper--input:placeholder-shown {
+  padding-left: 35px;
+  font-family: AvenirRegular;
+}
+
+.inventory__upper--input:hover {
+  border: 1px solid #002f5f;
+}
+
+.inventory__upper--search-icon {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+}
+
+.inventory__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  border-bottom: 2px solid #e1e1e1;
+}
+
+.inventory__content--titles {
+  display: none;
+}
+
+.inventory__content--data .title {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-family: AvenirDemi;
+  color: #afafaf;
+}
+
+.inventory__content--data .product-name {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: AvenirDemi;
+  margin-top: 16px;
+}
+
+.inventory__content--data .text {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: AvenirRegular;
+  margin: 16px 0 24px;
+}
+
+.inventory__content--icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.inventory__content--icon .fixed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #004892;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+}
+
+.inventory__content--icon .fixed__add-icon {
+  width: 20px;
+}
+
 *,
 html,
 body {
