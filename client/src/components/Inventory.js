@@ -46,7 +46,7 @@ export default class Inventory extends Component {
             <h4 className="text">In Stock</h4>
           </div>
           <div className="inventory__content--icon">
-            <img src={defaultIcon} className="default-icon" />
+            <img src={defaultIcon} alt="defaultIcon" className="default-icon" />
             <div className="fixed">
               <img src={addIcon} alt="addIcon" className="fixed__add-icon" />
             </div>
@@ -79,7 +79,7 @@ export default class Inventory extends Component {
             <h4 className="text">In Stock</h4>
           </div>
           <div className="inventory__content--icon">
-            <img src={defaultIcon} className="icon" />
+            <img src={defaultIcon} alt="defaultIcon" className="icon" />
           </div>
         </div>
         {/* third div  */}
@@ -109,7 +109,7 @@ export default class Inventory extends Component {
             <h4 className="text">In Stock</h4>
           </div>
           <div className="inventory__content--icon">
-            <img src={defaultIcon} className="icon" />
+            <img src={defaultIcon} alt="defaultIcon" className="icon" />
           </div>
         </div>
         {/* fourth div  */}
@@ -139,7 +139,7 @@ export default class Inventory extends Component {
             <h4 className="text">In Stock</h4>
           </div>
           <div className="inventory__content--icon">
-            <img src={defaultIcon} className="icon" />
+            <img src={defaultIcon} alt="defaultIcon" className="icon" />
           </div>
         </div>
         {/* fifth div  */}
@@ -169,7 +169,7 @@ export default class Inventory extends Component {
             <h4 className="text">In Stock</h4>
           </div>
           <div className="inventory__content--icon">
-            <img src={defaultIcon} className="icon" />
+            <img src={defaultIcon} alt="defaultIcon" className="icon" />
           </div>
         </div>
         {/* sixth div  */}
@@ -199,7 +199,7 @@ export default class Inventory extends Component {
             <h4 className="text">In Stock</h4>
           </div>
           <div className="inventory__content--icon">
-            <img src={defaultIcon} className="icon" />
+            <img src={defaultIcon} alt="defaultIcon" className="icon" />
           </div>
         </div>
         {/* seventh div  */}
@@ -229,7 +229,7 @@ export default class Inventory extends Component {
             <h4 className="text">In Stock</h4>
           </div>
           <div className="inventory__content--icon">
-            <img src={defaultIcon} className="icon" />
+            <img src={defaultIcon} alt="defaultIcon" className="icon" />
           </div>
         </div>
         {/* eighth div */}
@@ -259,7 +259,7 @@ export default class Inventory extends Component {
             <h4 className="text">In Stock</h4>
           </div>
           <div className="inventory__content--icon">
-            <img src={defaultIcon} className="icon" />
+            <img src={defaultIcon} alt="defaultIcon" className="icon" />
           </div>
         </div>
         {/* ninth div */}
@@ -290,7 +290,7 @@ export default class Inventory extends Component {
             <h4 className="text">In Stock</h4>
           </div>
           <div className="inventory__content--icon">
-            <img src={defaultIcon} className="icon" />
+            <img src={defaultIcon} alt="defaultIcon" className="icon" />
           </div>
         </div>
       </main>
