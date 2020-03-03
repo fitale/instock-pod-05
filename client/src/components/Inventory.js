@@ -7,18 +7,12 @@ export default class Inventory extends Component {
   render() {
     return (
       <main className="inventory">
-        <h1 className="inventory__title">Inventory</h1>
         <div className="inventory__upper">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="inventory__upper--input"
-          />
-          <img
-            src={searchIcon}
-            alt="searchicon"
-            className="inventory__upper--search-icon"
-          />
+          <h1 className="inventory__upper--title">Inventory</h1>
+          <div className="inventory__upper--input">
+            <input type="text" placeholder="Search..." className="input" />
+            <img src={searchIcon} alt="searchicon" className="search-icon" />
+          </div>
         </div>
         <div className="inventory__content">
           <div className="inventory__content--titles">
