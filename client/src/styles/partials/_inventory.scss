@@ -1,0 +1,69 @@
+.inventory {
+  margin: 32px 16px 20px;
+  &__title {
+    @include mobile-header;
+    margin-bottom: 16px;
+  }
+  &__upper {
+    position: relative;
+    margin-bottom: 32px;
+    &--input {
+      background-color: $text-bg-fill;
+      border: 1px solid $text-border;
+      border-radius: 4px;
+      width: 70vw;
+      height: 48px;
+      &:placeholder-shown {
+        padding-left: 35px;
+        font-family: AvenirRegular;
+      }
+      &:hover {
+        border: 1px solid $hover;
+      }
+    }
+    &--search-icon {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+    }
+  }
+  &__content {
+    @include flex-row-nowrap;
+    border-bottom: 2px solid $text-border;
+    &--titles {
+      display: none;
+    }
+    &--data {
+      .title {
+        @include mobile-labels;
+        color: $text-label;
+      }
+      .product-name {
+        @include mobile-subheader;
+        margin-top: 16px;
+      }
+      .text {
+        @include mobile-paragraph;
+        margin: 16px 0 24px;
+      }
+    }
+    &--icon {
+      @include flex-column-wrap;
+      justify-content: space-between;
+      .fixed {
+        @include flex-row-nowrap;
+        justify-content: center;
+        // position: fixed;
+        background-color: $text-link;
+        height: 60px;
+        width: 60px;
+        border-radius: 50px;
+        // margin-bottom: 20px;
+        // margin-right: 10px;
+        &__add-icon {
+          width: 20px;
+        }
+      }
+    }
+  }
+}
