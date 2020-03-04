@@ -1,13 +1,17 @@
 .warehouses {
   @include flex-row-wrap;
-
-  &__header {
+  &__header-text {
     padding-bottom: 16px;
   }
   &__header-text {
     @include mobile-header;
   }
 }
+// hide the column names on every platform except desktop
+.warehouse__header-container {
+  display: none;
+}
+//warehouse container
 .main__warehouses {
   padding: 32px 24px 32px 24px;
 }
@@ -18,7 +22,8 @@
   border-bottom: 2px solid $text-border;
   max-width: 100%;
 
-  &:first-child {
+  //gets the second warehouse and removes the padding to match the mockup
+  &:nth-child(2) {
     padding-top: 0px;
   }
 
@@ -99,6 +104,54 @@
     &__address {
       @include flex-row-nowrap;
       width: 100%;
+    }
+  }
+}
+@include huge {
+  .warehouse__header-container {
+    display: flex;
+  }
+  .warehouse {
+    @include flex-row-nowrap;
+    justify-content: space-between;
+    //header columns
+    &__column-name {
+      @include mobile-labels;
+      color: $text-label;
+      width: 100%;
+    }
+    //manage left side and right side
+    &__left {
+      @include flex-row-nowrap;
+      justify-content: space-between;
+      width: 80vw;
+      &-header {
+        @include flex-row-nowrap;
+        justify-content: space-between;
+        width: 80vw;
+      }
+    }
+    &__field {
+      width: 100%;
+    }
+    // &__block
+    @include flex-row-nowrap;
+    &__first {
+      &-row {
+        justify-content: space-between;
+        @include flex-row-wrap;
+        width: auto;
+      }
+    }
+    &__second {
+      @include flex-row-wrap;
+      &-row {
+        justify-content: space-between;
+        @include flex-row-wrap;
+      }
+    }
+    &__header-container {
+      padding-bottom: 32px;
     }
   }
 }

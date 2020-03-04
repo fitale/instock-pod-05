@@ -15,6 +15,27 @@ export default class Warehouses extends Component {
           </div>
 
           <div className="warehouses">
+            <div className="warehouse__header-container">
+              <div className="warehouse__left">
+                <div className="warehouse__second-row">
+                  <div className="warehouse__block warehouse__second warehouse__header-item">
+                    <div className="warehouse__column-name">TITLE</div>
+                  </div>
+                  <div className=" warehouse__block warehouse__second">
+                    <div className="warehouse__column-name">CONTACT</div>
+                  </div>
+                  <div className=" warehouse__block warehouse__third">
+                    <div className="warehouse__column-name">
+                      CONTACT INFORMATION
+                    </div>
+                  </div>
+
+                  <div className="warehouse__block warehouse__fourth">
+                    <div className="warehouse__column-name">CATEGORIES</div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="warehouse">
               <div className="warehouse__left">
                 <div className="warehouse__first-row">
@@ -44,7 +65,6 @@ export default class Warehouses extends Component {
                       weinberg@instack.com
                     </div>
                   </div>
-
                   <div className="warehouse__block warehouse__fourth">
                     <div className=" warehouse__field warehouse__categories">
                       Industrial, Automotive, Heavy, Mechanical, Engineering
