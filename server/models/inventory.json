@@ -7,46 +7,8 @@
     "country": "Canada",
     "quantity": "12,000",
     "status": "In Stock",
-    "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201",
-    "categories": [
-      "Industrial",
-      "Automotive",
-      "Heavy",
-      "Mechanical",
-      "Engineering", 
-      "Sales"
-    ]
-  },
-  {
-    "name": "Product Name Here",
-    "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
-    "lastOrder": "05/08/2020",
-    "city": "Toronto",
-    "country": "Canada",
-    "quantity": "12,000",
-    "status": "Out of Stock",
-    "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201",
-    "categories": [
-      "Industrial",
-      "Automotive",
-      "Heavy",
-      "Mechanical",
-      "Engineering",
-      "Sales"
-    ]
-  },
-  {
-    "name": "Product Name Here",
-    "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
-    "lastOrder": "05/08/2020",
-    "city": "Toronto",
-    "country": "Canada",
-    "quantity": "12,000",
-    "status": "In Stock",
-    "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201",
+    "orderedBy": "Mark Saunders",
+    "referenceNumber": "JK2020FD7811201",
     "categories": [
       "Industrial",
       "Automotive",
@@ -64,8 +26,8 @@
     "country": "Canada",
     "quantity": "12,000",
     "status": "Out of Stock",
-    "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201",
+    "orderedBy": "Mark Saunders",
+    "referenceNumber": "JK2020FD7811201",
     "categories": [
       "Industrial",
       "Automotive",
@@ -83,8 +45,8 @@
     "country": "Canada",
     "quantity": "12,000",
     "status": "In Stock",
-    "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201",
+    "orderedBy": "Mark Saunders",
+    "referenceNumber": "JK2020FD7811201",
     "categories": [
       "Industrial",
       "Automotive",
@@ -102,8 +64,8 @@
     "country": "Canada",
     "quantity": "12,000",
     "status": "Out of Stock",
-    "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201",
+    "orderedBy": "Mark Saunders",
+    "referenceNumber": "JK2020FD7811201",
     "categories": [
       "Industrial",
       "Automotive",
@@ -121,8 +83,8 @@
     "country": "Canada",
     "quantity": "12,000",
     "status": "In Stock",
-    "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201",
+    "orderedBy": "Mark Saunders",
+    "referenceNumber": "JK2020FD7811201",
     "categories": [
       "Industrial",
       "Automotive",
@@ -140,8 +102,8 @@
     "country": "Canada",
     "quantity": "12,000",
     "status": "Out of Stock",
-    "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201",
+    "orderedBy": "Mark Saunders",
+    "referenceNumber": "JK2020FD7811201",
     "categories": [
       "Industrial",
       "Automotive",
@@ -159,8 +121,46 @@
     "country": "Canada",
     "quantity": "12,000",
     "status": "In Stock",
-    "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201",
+    "orderedBy": "Mark Saunders",
+    "referenceNumber": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
+  },
+  {
+    "name": "Product Name Here",
+    "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
+    "lastOrder": "05/08/2020",
+    "city": "Toronto",
+    "country": "Canada",
+    "quantity": "12,000",
+    "status": "Out of Stock",
+    "orderedBy": "Mark Saunders",
+    "referenceNumber": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
+  },
+  {
+    "name": "Product Name Here",
+    "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
+    "lastOrder": "05/08/2020",
+    "city": "Toronto",
+    "country": "Canada",
+    "quantity": "12,000",
+    "status": "In Stock",
+    "orderedBy": "Mark Saunders",
+    "referenceNumber": "JK2020FD7811201",
     "categories": [
       "Industrial",
       "Automotive",
