@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import "./styles/main.css";
+
 import loadingImg from "./assets/icons/loading.svg";
 import axios from "axios";
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
-// import Warehouses from "./components/Warehouses";
+
+import Warehouses from "./components/Warehouses";
+
 // import Product from "./components/Product";
 
 export default class App extends Component {
@@ -33,6 +36,7 @@ export default class App extends Component {
   }
 
   render() {
+
     if ((this.state.inventory.length || this.state.warehouses.length) === 0) {
       return (
         <div>
@@ -47,5 +51,12 @@ export default class App extends Component {
         </div>
       );
     }
+
+    return (
+      <div>
+        <Warehouses />
+      </div>
+    );
+
   }
 }
