@@ -6,7 +6,17 @@
     "city": "Toronto",
     "country": "Canada",
     "quantity": "12,000",
-    "status": "In Stock"
+    "status": "In Stock",
+    "ordered-by": "Mark Saunders",
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering", 
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -15,7 +25,17 @@
     "city": "Toronto",
     "country": "Canada",
     "quantity": "12,000",
-    "status": "Out of Stock"
+    "status": "Out of Stock",
+    "ordered-by": "Mark Saunders",
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -24,7 +44,17 @@
     "city": "Toronto",
     "country": "Canada",
     "quantity": "12,000",
-    "status": "In Stock"
+    "status": "In Stock",
+    "ordered-by": "Mark Saunders",
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -33,7 +63,17 @@
     "city": "Toronto",
     "country": "Canada",
     "quantity": "12,000",
-    "status": "Out of Stock"
+    "status": "Out of Stock",
+    "ordered-by": "Mark Saunders",
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -42,7 +82,17 @@
     "city": "Toronto",
     "country": "Canada",
     "quantity": "12,000",
-    "status": "In Stock"
+    "status": "In Stock",
+    "ordered-by": "Mark Saunders",
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -51,7 +101,17 @@
     "city": "Toronto",
     "country": "Canada",
     "quantity": "12,000",
-    "status": "Out of Stock"
+    "status": "Out of Stock",
+    "ordered-by": "Mark Saunders",
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -60,7 +120,17 @@
     "city": "Toronto",
     "country": "Canada",
     "quantity": "12,000",
-    "status": "In Stock"
+    "status": "In Stock",
+    "ordered-by": "Mark Saunders",
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -69,7 +139,17 @@
     "city": "Toronto",
     "country": "Canada",
     "quantity": "12,000",
-    "status": "Out of Stock"
+    "status": "Out of Stock",
+    "ordered-by": "Mark Saunders",
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -78,6 +158,16 @@
     "city": "Toronto",
     "country": "Canada",
     "quantity": "12,000",
-    "status": "In Stock"
+    "status": "In Stock",
+    "ordered-by": "Mark Saunders",
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   }
 ]
