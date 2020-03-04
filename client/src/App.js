@@ -10,6 +10,8 @@ export default class App extends Component {
     return (
       <div>
         hey guyz
+        <Header />
+        <Product />
       </div>
     );
   }

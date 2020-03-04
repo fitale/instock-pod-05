@@ -8,7 +8,15 @@
     "quantity": "12,000",
     "status": "In Stock",
     "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201"
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering", 
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -19,7 +27,15 @@
     "quantity": "12,000",
     "status": "Out of Stock",
     "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201"
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -30,7 +46,15 @@
     "quantity": "12,000",
     "status": "In Stock",
     "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201"
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -41,7 +65,15 @@
     "quantity": "12,000",
     "status": "Out of Stock",
     "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201"
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -52,7 +84,15 @@
     "quantity": "12,000",
     "status": "In Stock",
     "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201"
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -63,7 +103,15 @@
     "quantity": "12,000",
     "status": "Out of Stock",
     "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201"
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -74,7 +122,15 @@
     "quantity": "12,000",
     "status": "In Stock",
     "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201"
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -85,7 +141,15 @@
     "quantity": "12,000",
     "status": "Out of Stock",
     "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201"
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   },
   {
     "name": "Product Name Here",
@@ -96,6 +160,14 @@
     "quantity": "12,000",
     "status": "In Stock",
     "ordered-by": "Mark Saunders",
-    "reference-number": "JK2020FD7811201"
+    "reference-number": "JK2020FD7811201",
+    "categories": [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Sales"
+    ]
   }
 ]
