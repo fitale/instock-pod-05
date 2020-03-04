@@ -3,12 +3,10 @@ import "./styles/main.css";
 
 import loadingImg from "./assets/icons/loading.svg";
 import axios from "axios";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
-
 import Warehouses from "./components/Warehouses";
-
-// import Product from "./components/Product";
 
 export default class App extends Component {
   state = {
@@ -36,7 +34,6 @@ export default class App extends Component {
   }
 
   render() {
-
     if ((this.state.inventory.length || this.state.warehouses.length) === 0) {
       return (
         <div>
@@ -45,18 +42,23 @@ export default class App extends Component {
       );
     } else {
       return (
-        <div>
-          <Header />
-          <Inventory inventory={this.state.inventory} />
-        </div>
+        <>
+          <Router>
+            <Header />
+            <Switch>
+              <Route
+                path="/"
+                render={props => (
+                  <Inventory {...props} inventory={this.state.inventory} />
+                )}
+                exact
+              />
+              <Route path="/warehouses" component={Warehouses}></Route>
+            </Switch>
+            {/* <Inventory inventory={this.state.inventory} /> */}
+          </Router>
+        </>
       );
     }
-
-    return (
-      <div>
-        <Warehouses />
-      </div>
-    );
-
   }
 }
