@@ -5,8 +5,8 @@ app.use(cors());
 
 app.use(express.json());
 
-// const videoRoutes = require("./routes/api/videos");
-// app.use("/api/videos", videoRoutes);
+const inventoryRoute = require("./routes/api/inventory");
+app.use("/api/inventory", inventoryRoute);
 
 app.listen(5000, function() {
   console.log("server is running on port 5000");

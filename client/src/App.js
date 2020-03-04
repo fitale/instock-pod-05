@@ -7,12 +7,8 @@ import Product from "./components/Product";
 
 export default class App extends Component {
   render() {
-    return (
-      <div>
-        hey guyz
-        <Header />
-        <Product />
-      </div>
-    );
+
+    return <div></div>;
+
   }
 }
