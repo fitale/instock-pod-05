@@ -4,11 +4,12 @@
 @import "./flex-mixins";
 
 .product {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 16px;
+  margin-right: 16px;
 
   &__head {
     height: 7rem;
+    
     &-title {
       display: flex;
       align-self: center;
@@ -128,21 +129,29 @@
       // end of info__three sub container
     }
   }
-  .product__btn {
-    width: 288px;
-    height: 48px;
-    background-color: $text-link;
-    border-radius: 4px;
-    outline: none;
-    color: $white;
-    font-family: "AvenirRegular";
-    font-size: 14px;
-    line-height: 16px;
+
+  
+}
+.button {
+     
+
+      &__actual {
+        width: 18rem;
+        height: 48px;
+        background-color: $text-link;
+        border-radius: 4px;
+        outline: none;
+        color: $white;
+        font-family: "AvenirRegular";
+        font-size: 14px;
+        line-height: 16px;
+        
+      }
   }
-  .product__btn:hover {
+  
+  .button__actual:hover {
     background-color: $hover;
   }
-}
 // end of mobile
 
 
@@ -300,19 +309,26 @@
         // end of info__three sub container
       }
     }
-    .product__btn {
-      width: 160px;
-      height: 48px;
-      margin-top: 40px;
-      background-color: $text-link;
-      border-radius: 4px;
-      outline: none;
-      color: $white;
-      font-family: "AvenirRegular";
-      font-size: 14px;
-      line-height: 16px;
+
+    .button {
+        display: flex;
+        flex-direction: row-reverse;
+
+        &__actual {
+            width: 160px;
+            height: 48px;
+            margin-top: 40px;
+            background-color: $text-link;
+            border-radius: 4px;
+            outline: none;
+            color: $white;
+            font-family: "AvenirRegular";
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
-    .product__btn:hover {
+    
+    .button__actual:hover {
       background-color: $hover;
     }
   }
@@ -476,19 +492,25 @@
         // end of info__three sub container
       }
     }
-    .product__btn {
-      width: 160px;
-      height: 48px;
-      margin-top: 40px;
-      background-color: $text-link;
-      border-radius: 4px;
-      outline: none;
-      color: $white;
-      font-family: "AvenirRegular";
-      font-size: 14px;
-      line-height: 16px;
+    .button {
+        display: flex;
+        flex-direction: row-reverse;
+
+        &__actual {
+            width: 160px;
+            height: 48px;
+            margin-top: 40px;
+            background-color: $text-link;
+            border-radius: 4px;
+            outline: none;
+            color: $white;
+            font-family: "AvenirRegular";
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
-    .product__btn:hover {
+    
+    .button__actual:hover {
       background-color: $hover;
     }
   }

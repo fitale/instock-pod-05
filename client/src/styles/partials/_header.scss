@@ -12,10 +12,10 @@
     margin-bottom: 0px; 
 
     &__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 41%;
     }
 
     &__anchor {
@@ -32,11 +32,12 @@
 }
 
 .navigation {
-    width: 20rem;
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     height: 45px;
     margin-top: 3px;
+    margin-right: 0;
 }
 
     .navigation__options {
@@ -49,7 +50,7 @@
         padding-top: 1rem;
         border-bottom: 5px $white ;
 
-        a, &-text {
+        &-text {
             font-family: avenir-next-demi;
             margin-top: 0;
             font-size: .8125rem;
@@ -58,11 +59,15 @@
             color: $text-label;
         }
 
-    &:hover {
+    &-text:hover {
+        color: $white;
+    }
+
+    &:hover  {
         color: $white;
         border-bottom: 5px $white solid;
- 
     }
+    
 }
 
 

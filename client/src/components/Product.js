@@ -70,7 +70,9 @@ function Product() {
               </div>
             </div>
           </div>
-          <button className="product__btn" type="submit">EDIT</button>
+          <div className="button">
+            <button className="button__actual" type="submit">EDIT</button>
+          </div>
         </div>
       </>
     );
