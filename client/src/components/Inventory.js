@@ -5,6 +5,32 @@ import defaultIcon from "../assets/icons/icon-kebab-default.svg";
 
 export default class Inventory extends Component {
   render() {
+    let html = this.props.inventory.map(item => {
+      // console.log(this.props.inventory);
+      return (
+        <div key={item.id} className="inventory__content">
+          <div className="inventory__content--data">
+            <h5 className="title">ITEM</h5>
+            <div className="product-container">
+              <h2 className="product-name">{item.name}</h2>
+              <h4 className="text flex-grow">{item.description}</h4>
+            </div>
+            <h5 className="title">LAST ORDERED</h5>
+            <h4 className="text">{item.lastOrder}</h4>
+            <h5 className="title">LOCATION</h5>
+            <h4 className="text">{item.city}</h4>
+            <h5 className="title">QUANTITY</h5>
+            <h4 className="text">{item.quantity}</h4>
+            <h5 className="title">STATUS</h5>
+            <h4 className="text">{item.status}</h4>
+          </div>
+          <div>
+            <img src={defaultIcon} alt="defaultIcon" className="default-icon" />
+          </div>
+        </div>
+      );
+    });
+    // console.log(typeof html);
     return (
       <main className="inventory">
         <div className="inventory__upper">
@@ -20,235 +46,11 @@ export default class Inventory extends Component {
           <h5 className="inventory__titles--item">LOCATION</h5>
           <h5 className="inventory__titles--item">QUANTITY</h5>
           <h5 className="inventory__titles--item">STATUS</h5>
-          <h5 className="inventory__titles--item"></h5>
+          <h5 className="inventory__titles--item"> </h5>
         </div>
-        <div className="inventory__content">
-          <div className="inventory__content--data">
-            <div className="container">
-              <h5 className="title">ITEM</h5>
-              <h2 className="product-name">Product Name Here</h2>
-              <h4 className="text flex-grow">
-                Here is a very brief description of the product name, its uses,
-                industries and possible attributes that could be used to
-                describe the product.
-              </h4>
-            </div>
-            <h5 className="title">LAST ORDERED</h5>
-            <h4 className="text">05/24/2020</h4>
-            <h5 className="title">LOCATION</h5>
-            <h4 className="text">Toronto, CAN</h4>
-            <h5 className="title">QUANTITY</h5>
-            <h4 className="text">12,000</h4>
-            <h5 className="title">STATUS</h5>
-            <h4 className="text">In Stock</h4>
-          </div>
-          <div className="inventory__content--icon">
-            <img src={defaultIcon} alt="defaultIcon" className="default-icon" />
-            <div className="fixed">
-              <img src={addIcon} alt="addIcon" className="fixed__add-icon" />
-            </div>
-          </div>
-        </div>
-        {/* second div  */}
-        <div className="inventory__content">
-          <div className="inventory__content--data">
-            <div className="container">
-              <h5 className="title">ITEM</h5>
-              <h2 className="product-name">Product Name Here</h2>
-              <h4 className="text">
-                Here is a very brief description of the product name, its uses,
-                industries and possible attributes that could be used to
-                describe the product.
-              </h4>
-            </div>
-            <h5 className="title">LAST ORDERED</h5>
-            <h4 className="text">05/24/2020</h4>
-            <h5 className="title">LOCATION</h5>
-            <h4 className="text">Toronto, CAN</h4>
-            <h5 className="title">QUANTITY</h5>
-            <h4 className="text">12,000</h4>
-            <h5 className="title">STATUS</h5>
-            <h4 className="text">In Stock</h4>
-          </div>
-          <div className="inventory__content--icon">
-            <img src={defaultIcon} alt="defaultIcon" className="icon" />
-          </div>
-        </div>
-        {/* third div  */}
-        <div className="inventory__content">
-          <div className="inventory__content--data">
-            <div className="container">
-              <h5 className="title">ITEM</h5>
-              <h2 className="product-name">Product Name Here</h2>
-              <h4 className="text">
-                Here is a very brief description of the product name, its uses,
-                industries and possible attributes that could be used to
-                describe the product.
-              </h4>
-            </div>
-            <h5 className="title">LAST ORDERED</h5>
-            <h4 className="text">05/24/2020</h4>
-            <h5 className="title">LOCATION</h5>
-            <h4 className="text">Toronto, CAN</h4>
-            <h5 className="title">QUANTITY</h5>
-            <h4 className="text">12,000</h4>
-            <h5 className="title">STATUS</h5>
-            <h4 className="text">In Stock</h4>
-          </div>
-          <div className="inventory__content--icon">
-            <img src={defaultIcon} alt="defaultIcon" className="icon" />
-          </div>
-        </div>
-        {/* fourth div  */}
-        <div className="inventory__content">
-          <div className="inventory__content--data">
-            <div className="container">
-              <h5 className="title">ITEM</h5>
-              <h2 className="product-name">Product Name Here</h2>
-              <h4 className="text">
-                Here is a very brief description of the product name, its uses,
-                industries and possible attributes that could be used to
-                describe the product.
-              </h4>
-            </div>
-            <h5 className="title">LAST ORDERED</h5>
-            <h4 className="text">05/24/2020</h4>
-            <h5 className="title">LOCATION</h5>
-            <h4 className="text">Toronto, CAN</h4>
-            <h5 className="title">QUANTITY</h5>
-            <h4 className="text">12,000</h4>
-            <h5 className="title">STATUS</h5>
-            <h4 className="text">In Stock</h4>
-          </div>
-          <div className="inventory__content--icon">
-            <img src={defaultIcon} alt="defaultIcon" className="icon" />
-          </div>
-        </div>
-        {/* fifth div  */}
-        <div className="inventory__content">
-          <div className="inventory__content--data">
-            <div className="container">
-              <h5 className="title">ITEM</h5>
-              <h2 className="product-name">Product Name Here</h2>
-              <h4 className="text">
-                Here is a very brief description of the product name, its uses,
-                industries and possible attributes that could be used to
-                describe the product.
-              </h4>
-            </div>
-            <h5 className="title">LAST ORDERED</h5>
-            <h4 className="text">05/24/2020</h4>
-            <h5 className="title">LOCATION</h5>
-            <h4 className="text">Toronto, CAN</h4>
-            <h5 className="title">QUANTITY</h5>
-            <h4 className="text">12,000</h4>
-            <h5 className="title">STATUS</h5>
-            <h4 className="text">In Stock</h4>
-          </div>
-          <div className="inventory__content--icon">
-            <img src={defaultIcon} alt="defaultIcon" className="icon" />
-          </div>
-        </div>
-        {/* sixth div  */}
-        <div className="inventory__content">
-          <div className="inventory__content--data">
-            <div className="container">
-              <h5 className="title">ITEM</h5>
-              <h2 className="product-name">Product Name Here</h2>
-              <h4 className="text">
-                Here is a very brief description of the product name, its uses,
-                industries and possible attributes that could be used to
-                describe the product.
-              </h4>
-            </div>
-            <h5 className="title">LAST ORDERED</h5>
-            <h4 className="text">05/24/2020</h4>
-            <h5 className="title">LOCATION</h5>
-            <h4 className="text">Toronto, CAN</h4>
-            <h5 className="title">QUANTITY</h5>
-            <h4 className="text">12,000</h4>
-            <h5 className="title">STATUS</h5>
-            <h4 className="text">In Stock</h4>
-          </div>
-          <div className="inventory__content--icon">
-            <img src={defaultIcon} alt="defaultIcon" className="icon" />
-          </div>
-        </div>
-        {/* seventh div  */}
-        <div className="inventory__content">
-          <div className="inventory__content--data">
-            <div className="container">
-              <h5 className="title">ITEM</h5>
-              <h2 className="product-name">Product Name Here</h2>
-              <h4 className="text">
-                Here is a very brief description of the product name, its uses,
-                industries and possible attributes that could be used to
-                describe the product.
-              </h4>
-            </div>
-            <h5 className="title">LAST ORDERED</h5>
-            <h4 className="text">05/24/2020</h4>
-            <h5 className="title">LOCATION</h5>
-            <h4 className="text">Toronto, CAN</h4>
-            <h5 className="title">QUANTITY</h5>
-            <h4 className="text">12,000</h4>
-            <h5 className="title">STATUS</h5>
-            <h4 className="text">In Stock</h4>
-          </div>
-          <div className="inventory__content--icon">
-            <img src={defaultIcon} alt="defaultIcon" className="icon" />
-          </div>
-        </div>
-        {/* eighth div */}
-        <div className="inventory__content">
-          <div className="inventory__content--data">
-            <div className="container">
-              <h5 className="title">ITEM</h5>
-              <h2 className="product-name">Product Name Here</h2>
-              <h4 className="text">
-                Here is a very brief description of the product name, its uses,
-                industries and possible attributes that could be used to
-                describe the product.
-              </h4>
-            </div>
-            <h5 className="title">LAST ORDERED</h5>
-            <h4 className="text">05/24/2020</h4>
-            <h5 className="title">LOCATION</h5>
-            <h4 className="text">Toronto, CAN</h4>
-            <h5 className="title">QUANTITY</h5>
-            <h4 className="text">12,000</h4>
-            <h5 className="title">STATUS</h5>
-            <h4 className="text">In Stock</h4>
-          </div>
-          <div className="inventory__content--icon">
-            <img src={defaultIcon} alt="defaultIcon" className="icon" />
-          </div>
-        </div>
-        {/* ninth div */}
-
-        <div className="inventory__content">
-          <div className="inventory__content--data">
-            <div className="container">
-              <h5 className="title">ITEM</h5>
-              <h2 className="product-name">Product Name Here</h2>
-              <h4 className="text">
-                Here is a very brief description of the product name, its uses,
-                industries and possible attributes that could be used to
-                describe the product.
-              </h4>
-            </div>
-            <h5 className="title">LAST ORDERED</h5>
-            <h4 className="text">05/24/2020</h4>
-            <h5 className="title">LOCATION</h5>
-            <h4 className="text">Toronto, CAN</h4>
-            <h5 className="title">QUANTITY</h5>
-            <h4 className="text">12,000</h4>
-            <h5 className="title">STATUS</h5>
-            <h4 className="text">In Stock</h4>
-          </div>
-          <div className="inventory__content--icon">
-            <img src={defaultIcon} alt="defaultIcon" className="icon" />
-          </div>
+        {html}
+        <div className="fixed">
+          <img src={addIcon} alt="addIcon" className="fixed__add-icon" />
         </div>
       </main>
     );
