@@ -523,6 +523,192 @@
   }
 }
 
+/* media query for tablet */
+/* media query for high px density desktop */
+@font-face {
+  font-family: "AvenirRegular";
+  src: url("../assets/font/AvenirNextLTProRegular.otf");
+}
+
+@font-face {
+  font-family: "AvenirBold";
+  src: url("../assets/font/AvenirNextLTProBold.otf");
+}
+
+@font-face {
+  font-family: "AvenirDemi";
+  src: url("../assets/font/AvenirNextLTProDemi.otf");
+}
+
+@font-face {
+  font-family: "AvenirThin";
+  src: url("../assets/font/AvenirNextLTProThin.otf");
+}
+
+.product {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.product__head {
+  height: 7rem;
+}
+
+.product__head-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 16px 0;
+}
+
+.product__head-title .product__head-arrow {
+  margin-right: 1.5rem;
+  height: 24px;
+}
+
+.product__head-title .product__head-text {
+  font-family: "AvenirBold";
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.product__head .product__status {
+  width: 88px;
+  height: 24px;
+  border-radius: 4px;
+  font-family: "AvenirDemi";
+  color: #fff;
+  font-size: 12px;
+  line-height: 14px;
+  background-color: yellowgreen;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.product .details__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.product .details__description-label {
+  font-family: "AvenirDemi";
+  color: #afafaf;
+  margin-bottom: 16px;
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.product .details__description-words {
+  font-family: "AvenirThin";
+  color: #000;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.product .details .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 32px;
+}
+
+.product .details .info__one-sub {
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.product .details .info__one-sub-title {
+  color: #afafaf;
+  font-family: "AvenirDemi";
+  margin-bottom: 16px;
+}
+
+.product .details .info__one-sub-text {
+  font-family: "AvenirThin";
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.product .details .info__two-sub {
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.product .details .info__two-sub-title {
+  color: #afafaf;
+  font-family: "AvenirDemi";
+  margin-bottom: 16px;
+}
+
+.product .details .info__two-sub-text {
+  font-family: "AvenirThin";
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.product .details .info__three-sub {
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.product .details .info__three-sub-title {
+  color: #afafaf;
+  font-family: "AvenirDemi";
+  margin-bottom: 16px;
+}
+
+.product .details .info__three-sub-text {
+  font-family: "AvenirThin";
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.product .product__btn {
+  width: 288px;
+  height: 48px;
+  background-color: #004892;
+  border-radius: 4px;
+  outline: none;
+  color: #fff;
+  font-family: "AvenirRegular";
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.product .product__btn:hover {
+  background-color: #002f5f;
+}
+
 *,
 html,
 body {
