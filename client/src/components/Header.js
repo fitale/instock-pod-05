@@ -6,12 +6,8 @@ function Header() {
     <>
       <header className="header">
         <div className="header__container">
-          <a className="header__anchor">
-            <img
-              className="header__logo"
-              src={logo}
-              alt="company logo"
-            />
+          <a href="/" className="header__anchor">
+            <img className="header__logo" src={logo} alt="company logo" />
           </a>
         </div>
 
