@@ -56,7 +56,7 @@
         color: $text-label;
         margin-bottom: 16px;
         font-size: 12px;
-      line-height: 13px;
+        line-height: 13px;
       }
       &-words {
         font-family: "AvenirThin";
@@ -74,8 +74,8 @@
 
       &__one {
         &-sub {
-            font-size: 12px;
-            line-height: 13px;
+          font-size: 12px;
+          line-height: 13px;
           &-title {
             color: $text-label;
             font-family: "AvenirDemi";
@@ -91,14 +91,13 @@
       // end of info__one sub container
       &__two {
         &-sub {
-            font-size: 12px;
-            line-height: 13px;
+          font-size: 12px;
+          line-height: 13px;
 
           &-title {
             color: $text-label;
             font-family: "AvenirDemi";
             margin-bottom: 16px;
-
           }
           &-text {
             font-family: "AvenirThin";
@@ -111,8 +110,8 @@
 
       &__three {
         &-sub {
-            font-size: 12px;
-            line-height: 13px;
+          font-size: 12px;
+          line-height: 13px;
 
           &-title {
             color: $text-label;
@@ -130,8 +129,181 @@
     }
   }
   .product__btn {
-      width: 288px;
+    width: 288px;
+    height: 48px;
+    background-color: $text-link;
+    border-radius: 4px;
+    outline: none;
+    color: $white;
+    font-family: "AvenirRegular";
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .product__btn:hover {
+    background-color: $hover;
+  }
+}
+// end of mobile
+
+
+
+@include medium {
+  .product {
+    margin-left: 24px;
+    margin-right: 24px;
+
+    &__head {
+      width: 720px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+    //   margin-bottom: 40px;
+     margin-top: 48px;
+        margin-bottom: 40px;
+      
+
+      &-title {
+        display: flex;
+        // align-self: center;
+        margin: 0;
+       
+
+        .product__head-arrow {
+          margin-right: 1.5rem;
+          width: 16px;
+          height: 24px;
+        }
+        .product__head-text {
+          font-family: "AvenirBold";
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+      .product__status {
+        width: 88px;
+        height: 24px;
+        margin-left: 24px;
+        border-radius: 4px;
+        font-family: "AvenirDemi";
+        color: $white;
+        font-size: 12px;
+        line-height: 14px;
+        background-color: yellowgreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    // end of product header
+
+    // product details
+    .details {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid $text-border;
+      border-bottom: 1px solid $text-border;
+      
+
+      &__description {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        line-height: 16px;
+
+        &-label {
+          font-family: "AvenirRegular";
+          color: $text-label;
+          margin-bottom: 16px;
+          margin-top: 40px;
+          font-size: 12px;
+          line-height: 13px;
+          font-weight: bold;
+        }
+        &-words {
+          width: 570px;
+          font-family: "AvenirThin";
+          color: $black;
+          font-size: 13px;
+          line-height: 16px;
+        }
+      }
+
+      // product info except description
+      .info {
+        display: flex;
+        // flex-direction: column;
+        justify-content: space-between;
+        margin-top: 32px;
+
+        &__one {
+            display: flex;
+
+          &-sub {
+            width: 100%;
+            font-size: 12px;
+            line-height: 13px;
+            // margin-right: 250px;
+            
+            &-title {
+              color: $text-label;
+              font-family: "AvenirRegular";
+              margin-bottom: 16px;
+            }
+            &-text {
+              font-family: "AvenirThin";
+              color: $black;
+              margin-bottom: 24px;
+            }
+          }
+        }
+        // end of info__one sub container
+        &__two {
+            display: flex;
+            
+          &-sub {
+            width: 100%;
+            font-size: 12px;
+            line-height: 13px;
+            // margin-right: 242px;
+
+            &-title {
+              color: $text-label;
+              font-family: "AvenirRegular";
+              margin-bottom: 16px;
+            }
+            &-text {
+              font-family: "AvenirThin";
+              color: $black;
+              margin-bottom: 24px;
+            }
+          }
+        }
+        // end of info__two sub container
+
+        &__three {
+          &-sub {
+            font-size: 12px;
+            line-height: 13px;
+
+            &-title {
+              color: $text-label;
+              font-family: "AvenirRegular";
+              margin-bottom: 16px;
+            }
+            &-text {
+              font-family: "AvenirThin";
+              color: $black;
+              margin-bottom: 48px;
+            }
+          }
+        }
+        // end of info__three sub container
+      }
+    }
+    .product__btn {
+      width: 160px;
       height: 48px;
+      margin-top: 40px;
       background-color: $text-link;
       border-radius: 4px;
       outline: none;
@@ -139,8 +311,184 @@
       font-family: "AvenirRegular";
       font-size: 14px;
       line-height: 16px;
-  }
-  .product__btn:hover {
+    }
+    .product__btn:hover {
       background-color: $hover;
+    }
+  }
+}
+// end of medium
+
+
+
+
+@include huge {
+  .product {
+    margin-left: 180px;
+    margin-right: 180px;
+
+    &__head {
+      width: 720px;
+      height: 7rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      
+
+      &-title {
+        display: flex;
+        align-self: center;
+        margin: 16px 0;
+
+        .product__head-arrow {
+          margin-right: 24px;
+          height: 24px;
+        }
+        .product__head-text {
+          font-family: "AvenirBold";
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+      .product__status {
+        width: 88px;
+        height: 24px;
+        margin-left: 24px;
+        border-radius: 4px;
+        font-family: "AvenirDemi";
+        color: $white;
+        font-size: 12px;
+        line-height: 14px;
+        background-color: yellowgreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    // end of product header
+
+    // product details
+    .details {
+      display: flex;
+      flex-direction: row;
+      border-top: 1px solid $text-border;
+      border-bottom: 1px solid $text-border;
+      
+
+      &__description {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        line-height: 16px;
+        width: 600px;
+
+        &-label {
+          width: 100%;
+          font-family: "AvenirRegular";
+          color: $text-label;
+          margin-bottom: 16px;
+          font-size: 12px;
+          line-height: 13px;
+          font-weight: bold;
+        }
+        &-words {
+          width: 470px;
+          font-family: "AvenirThin";
+          color: $black;
+          font-size: 13px;
+          line-height: 16px;
+        }
+      }
+
+      // product info except description
+      .info {
+        display: flex;
+        // flex-direction: column;
+        justify-content: space-between;
+        margin-top: 40px;
+        width: 600px;
+
+        &__one {
+            display: flex;
+
+          &-sub {
+            width: 100%;
+            font-size: 12px;
+            line-height: 13px;
+            // margin-right: 250px;
+            
+            &-title {
+              color: $text-label;
+              font-family: "AvenirRegular";
+              margin-bottom: 16px;
+            }
+            &-text {
+              font-family: "AvenirThin";
+              color: $black;
+              margin-bottom: 24px;
+            }
+          }
+        }
+        // end of info__one sub container
+        &__two {
+            display: flex;
+            
+          &-sub {
+            width: 100%;
+            font-size: 12px;
+            line-height: 13px;
+            // margin-right: 242px;
+
+            &-title {
+              color: $text-label;
+              font-family: "AvenirRegular";
+              margin-bottom: 16px;
+            }
+            &-text {
+              font-family: "AvenirThin";
+              color: $black;
+              margin-bottom: 24px;
+            }
+          }
+        }
+        // end of info__two sub container
+
+        &__three {
+            width: 100%;
+          &-sub {
+            // width: 100%;
+            font-size: 12px;
+            line-height: 13px;
+
+            &-title {
+              color: $text-label;
+              font-family: "AvenirRegular";
+              margin-bottom: 16px;
+            }
+            &-text {
+              font-family: "AvenirThin";
+              color: $black;
+              margin-bottom: 48px;
+            }
+          }
+        }
+        // end of info__three sub container
+      }
+    }
+    .product__btn {
+      width: 160px;
+      height: 48px;
+      margin-top: 40px;
+      background-color: $text-link;
+      border-radius: 4px;
+      outline: none;
+      color: $white;
+      font-family: "AvenirRegular";
+      font-size: 14px;
+      line-height: 16px;
+    }
+    .product__btn:hover {
+      background-color: $hover;
+    }
   }
 }
