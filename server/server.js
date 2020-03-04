@@ -14,3 +14,10 @@ app.use("/api/warehouses", warehousesRoute);
 app.listen(5000, function() {
   console.log("server is running on port 5000");
 });
+
+// Response is an object in the form of { status: 'message' },
+// where message is either a successful login, or an invalid email/password
+app.get("/login", (req, res) => {
+  const { email, password } = req.body;
+  res.send("login");
+});
