@@ -1,0 +1,90 @@
+.create-new {
+  margin: 32px 16px;
+  &__title {
+    @include mobile-header;
+    color: $para-and-nav;
+    margin-bottom: 0.5rem;
+  }
+  &__container {
+    &--flex {
+      .title {
+        @include mobile-subheader;
+        color: $text-label;
+        margin-top: 1.5rem;
+      }
+      .input {
+        background-color: $text-bg-fill;
+        border: 0.0625rem solid $text-border;
+        border-radius: 0.25rem;
+        // markup says { width: 220px } which is about 70vw, but doesn't visually match design
+        width: 100%;
+        height: 2.5rem;
+        outline: none;
+        margin-top: 0.5rem;
+        &:placeholder-shown {
+          padding-left: 1rem;
+          font-family: AvenirRegular;
+        }
+        &:hover {
+          border: 0.0625rem solid $hover;
+          cursor: pointer;
+        }
+      }
+    }
+    &--description {
+      @include mobile-subheader;
+      color: $text-label;
+      margin-top: 1.5rem;
+    }
+    &--input {
+      background-color: $text-bg-fill;
+      border: 0.0625rem solid $text-border;
+      border-radius: 0.25rem;
+      // markup says { width: 220px } which is about 70vw, but doesn't visually match design
+      width: 100%;
+      height: 25vw;
+      outline: none;
+      margin-top: 0.5rem;
+      &:placeholder-shown {
+        padding-left: 1rem;
+        font-family: AvenirRegular;
+      }
+      &:hover {
+        border: 0.0625rem solid $hover;
+        cursor: pointer;
+      }
+    }
+    &--button {
+      @include flex-column-nowrap;
+      margin-top: 24px;
+      .save {
+        @include mobile-subheader;
+        width: 100%;
+        height: 40px;
+        background-color: $text-link;
+        border: 0.0625rem solid $text-link;
+        border-radius: 0.25rem;
+        color: $text-bg-fill;
+        outline: none;
+        &:hover {
+          border: 0.0625rem solid $hover;
+          background-color: $hover;
+          cursor: pointer;
+        }
+      }
+      .cancel {
+        @include mobile-subheader;
+        width: 100%;
+        height: 2.5rem;
+        color: $text-link;
+        margin-top: 1.5rem;
+        border-radius: 0.25rem;
+        outline: none;
+        &:hover {
+          border: 0.0625rem solid $hover;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

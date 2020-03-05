@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import searchIcon from "../assets/icons/icon-search.svg";
 import addIcon from "../assets/icons/icon-add.svg";
-import defaultIcon from "../assets/icons/icon-kebab-default.svg";
 import { Link } from "react-router-dom";
 
 export default class Inventory extends Component {

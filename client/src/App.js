@@ -4,10 +4,12 @@ import "./styles/main.css";
 import loadingImg from "./assets/icons/loading.svg";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
 import Warehouses from "./components/Warehouses";
-import Product from "./components/Product";
+// import Product from "./components/Product";
+import Modal from "./components/Modal";
 
 export default class App extends Component {
   state = {
@@ -74,6 +76,7 @@ export default class App extends Component {
                   <Warehouses {...props} warehouses={this.state.warehouses} />
                 )}
               ></Route>
+              <Route path="/createnew" component={Modal} />
             </Switch>
           </Router>
         </>
