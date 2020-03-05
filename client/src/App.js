@@ -14,16 +14,24 @@ export default class App extends Component {
     warehouses: []
   };
 
-  componentDidMount() {
-    axios.get("http://localhost:5000/api/inventory").then(res1 => {
+  async componentDidMount() {
+    await axios.get("http://localhost:5000/api/warehouses").then(res2 => {
       this.setState(
         {
-          inventory: res1.data,
-          warehouses: []
+          warehouses: res2.data
         },
-        console.log(res1.data)
+        console.log(res2.data)
       );
     });
+    // await axios.get("http://localhost:5000/api/inventory").then(res1 => {
+    //   this.setState(
+    //     {
+    //       inventory: res1.data,
+    //       warehouses: []
+    //     }
+    //     // console.log(res1.data)
+    //   );
+    // });
   }
 
   componentDidCatch(error, errorInfo) {
@@ -53,7 +61,12 @@ export default class App extends Component {
                 )}
                 exact
               />
-              <Route path="/warehouses" component={Warehouses}></Route>
+              <Route
+                path="/warehouses"
+                render={props => (
+                  <Warehouses {...props} warehouses={this.state.warehouses} />
+                )}
+              ></Route>
             </Switch>
             {/* <Inventory inventory={this.state.inventory} /> */}
           </Router>
