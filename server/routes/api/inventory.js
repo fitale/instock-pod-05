@@ -38,17 +38,19 @@ router.post("/", (req, res) => {
   const newInventory = {
     id: helper.getNewId(),
     name: req.name,
-    address: req.address,
-    contact: req.contactName,
-    contact_title: req.contact_title,
-    phone: req.phone,
-    email: req.email,
+    description: req.description,
+    lastOrder: req.lastOrder,
+    city: req.city,
+    country: req.country,
+    quantity: req.quantity,
+    status: req.status,
+    orderedBy: req.orderedBy,
+    referenceNumber: req.referenceNumber,
     categories: req.categories
   };
-  if (!newInventory.title || !newInventory.description) {
+  if (!newInventory.name || !newInventory.description) {
     return res.status(400).json({
-      errorMessage:
-        "Please provide title, description, and imageUrl for the video"
+      errorMessage: "Please provide all the required fields."
     });
   }
   inventorys.push(newInventory);
