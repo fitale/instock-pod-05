@@ -359,8 +359,13 @@
 }
 
 .warehouses__columns {
+  padding-top: 0px;
   display: none;
   visibility: hidden;
+}
+
+.warehouses__columns > .warehouse {
+  padding-top: 0px;
 }
 
 .warehouse {
@@ -376,6 +381,7 @@
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-family: AvenirRegular;
+  padding-top: 24px;
 }
 
 .warehouse__body {
@@ -465,6 +471,9 @@
   }
   .main__warehouses {
     padding: 0px 24px;
+  }
+  .warehouse {
+    padding-top: 24px;
   }
   .warehouse__title--block {
     width: 90vw;
