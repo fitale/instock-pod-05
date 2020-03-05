@@ -13,7 +13,7 @@ export default class App extends Component {
     inventory: [],
     warehouses: []
   };
-  getProducts() {
+  getInventory() {
     return axios.get("http://localhost:5000/api/inventory");
   }
 
@@ -23,7 +23,7 @@ export default class App extends Component {
 
   async componentDidMount() {
     axios
-      .all([this.getWarehouses(), this.getProducts()])
+      .all([this.getWarehouses(), this.getInventory()])
       .then(
         axios.spread((...responses) => {
           const responseOne = responses[0];
