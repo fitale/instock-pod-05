@@ -50,14 +50,14 @@ export default class Modal extends Component {
           </div>
         </div>
         <div className="create-new__container">
-          <h5 className="create-new__container--description">
-            ITEM DESCRIPTION
-          </h5>
-          <input
-            type="text"
-            placeholder="(Optional)"
-            className="create-new__container--input"
-          />
+          <div className="create-new__container--description">
+            <h5 className="description">ITEM DESCRIPTION</h5>
+            <input
+              type="text"
+              placeholder="(Optional)"
+              className="create-new__container--input"
+            />
+          </div>
         </div>
         <div className="create-new__container--button">
           <button className="save">SAVE</button>
