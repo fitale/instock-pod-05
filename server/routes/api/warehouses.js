@@ -1,12 +1,9 @@
 const express = require("express");
 const warehouses = require("../../models/warehouses.json");
-// const warehousesFile = __dirname + "/../../models/warehouses.json";
-// const warehouses = require("");
 const helper = require("../../helper/helper");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  // console.log("res is:", warehouses);
   const warehousesList = warehouses.map(item => {
     return {
       id: helper.getNewId(),
@@ -20,7 +17,6 @@ router.get("/", (req, res) => {
     };
   });
   res.json(warehousesList);
-  // console.log(warehousesList);
 });
 
 router.get("/:id", (req, res) => {
