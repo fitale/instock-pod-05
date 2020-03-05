@@ -34,4 +34,28 @@ router.get("/:id", (req, res) => {
   }
 });
 
+router.post("/", (req, res) => {
+  const newInventory = {
+    id: helper.getNewId(),
+    name: req.name,
+    description: req.description,
+    lastOrder: req.lastOrder,
+    city: req.city,
+    country: req.country,
+    quantity: req.quantity,
+    status: req.status,
+    orderedBy: req.orderedBy,
+    referenceNumber: "JK2020FD7811201",
+    categories: req.categories
+  };
+  if (!newInventory.name || !newInventory.description) {
+    return res.status(400).json({
+      errorMessage: "Please provide all the required fields."
+    });
+  }
+  inventorys.push(newInventory);
+  helper.writeJSONFile(inventorysFile, inventorys);
+  res.json(inventorys);
+});
+
 module.exports = router;
