@@ -1,6 +1,20 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Modal extends Component {
+  constructor(props) {
+    super(props);
+    this.name = React.createRef();
+    this.description = React.createRef();
+    this.lastOrder = React.createRef();
+    this.city = React.createRef();
+    this.country = React.createRef();
+    this.quantity = React.createRef();
+    this.status = React.createRef();
+    this.orderedBy = React.createRef();
+    this.referenceNumber = React.createRef();
+    this.categories = React.createRef();
+  }
   render() {
     return (
       <div className="create-new">
@@ -47,7 +61,12 @@ export default class Modal extends Component {
         </div>
         <div className="create-new__container--button">
           <button className="save">SAVE</button>
-          <button className="cancel">CANCEL</button>
+          <Link to="/" className="cancel">
+            CANCEL
+          </Link>
+          <button onClick={this.props.closeModalNow} className="desk-cancel">
+            CANCEL
+          </button>
         </div>
       </div>
     );

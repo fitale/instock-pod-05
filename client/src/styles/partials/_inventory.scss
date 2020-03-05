@@ -98,6 +98,9 @@
       width: 1.25rem;
     }
   }
+  &__desk-fixed {
+    display: none;
+  }
 }
 
 @include medium {
@@ -164,6 +167,31 @@
         margin-right: 1.5rem;
       }
     }
+    &__fixed {
+      display: none;
+    }
+    &__desk-fixed {
+      display: unset;
+      position: fixed;
+      bottom: 1.875rem;
+      right: 1.5625rem;
+      @include flex-row-wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: $text-link;
+      border: 0.0625rem solid $text-link;
+      border-radius: 3.125rem;
+      height: 3.75rem;
+      width: 3.75rem;
+      outline: none;
+      &:hover {
+        background-color: $hover;
+        cursor: pointer;
+      }
+      &--add-icon {
+        width: 1.25rem;
+      }
+    }
   }
 }
 
@@ -213,7 +241,7 @@
         }
       }
     }
-    &__fixed {
+    &__desk-fixed {
       bottom: 100px;
       right: 250px;
       height: 80px;

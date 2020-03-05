@@ -174,6 +174,10 @@
   width: 1.25rem;
 }
 
+.inventory__desk-fixed {
+  display: none;
+}
+
 @media only screen and (min-width: 768px) {
   .inventory {
     margin: 2rem 1.5rem 0;
@@ -293,6 +297,43 @@
         align-self: center;
     margin-right: 1.5rem;
   }
+  .inventory__fixed {
+    display: none;
+  }
+  .inventory__desk-fixed {
+    display: unset;
+    position: fixed;
+    bottom: 1.875rem;
+    right: 1.5625rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #004892;
+    border: 0.0625rem solid #004892;
+    border-radius: 3.125rem;
+    height: 3.75rem;
+    width: 3.75rem;
+    outline: none;
+  }
+  .inventory__desk-fixed:hover {
+    background-color: #002f5f;
+    cursor: pointer;
+  }
+  .inventory__desk-fixed--add-icon {
+    width: 1.25rem;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -338,13 +379,13 @@
     height: 20px;
     margin-bottom: 30px;
   }
-  .inventory__fixed {
+  .inventory__desk-fixed {
     bottom: 100px;
     right: 250px;
     height: 80px;
     width: 80px;
   }
-  .inventory__fixed--add-icon {
+  .inventory__desk-fixed--add-icon {
     height: 24px;
     width: 24px;
   }
@@ -1514,6 +1555,9 @@
           flex-direction: column;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 24px;
 }
 
@@ -1546,11 +1590,39 @@
   margin-top: 1.5rem;
   border-radius: 0.25rem;
   outline: none;
+  text-decoration: none;
 }
 
 .create-new__container--button .cancel:hover {
   border: 0.0625rem solid #002f5f;
   cursor: pointer;
+}
+
+.create-new__container--button .desk-cancel {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .create-new__container--button .cancel {
+    display: none;
+  }
+  .create-new__container--button .desk-cancel {
+    display: unset;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: AvenirDemi;
+    width: 100%;
+    height: 2.5rem;
+    color: #004892;
+    margin-top: 1.5rem;
+    border-radius: 0.25rem;
+    outline: none;
+    text-decoration: none;
+  }
+  .create-new__container--button .desk-cancel:hover {
+    border: 0.0625rem solid #002f5f;
+    cursor: pointer;
+  }
 }
 
 *,

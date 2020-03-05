@@ -56,6 +56,7 @@
     }
     &--button {
       @include flex-column-nowrap;
+      justify-content: center;
       margin-top: 24px;
       .save {
         @include mobile-subheader;
@@ -80,9 +81,40 @@
         margin-top: 1.5rem;
         border-radius: 0.25rem;
         outline: none;
+        text-decoration: none;
         &:hover {
           border: 0.0625rem solid $hover;
           cursor: pointer;
+        }
+      }
+      .desk-cancel {
+        display: none;
+      }
+    }
+  }
+}
+
+@include medium {
+  .create-new {
+    &__container {
+      &--button {
+        .cancel {
+          display: none;
+        }
+        .desk-cancel {
+          display: unset;
+          @include mobile-subheader;
+          width: 100%;
+          height: 2.5rem;
+          color: $text-link;
+          margin-top: 1.5rem;
+          border-radius: 0.25rem;
+          outline: none;
+          text-decoration: none;
+          &:hover {
+            border: 0.0625rem solid $hover;
+            cursor: pointer;
+          }
         }
       }
     }
