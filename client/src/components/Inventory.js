@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import searchIcon from "../assets/icons/icon-search.svg";
 import addIcon from "../assets/icons/icon-add.svg";
 import defaultIcon from "../assets/icons/icon-kebab-default.svg";
+import { Link } from "react-router-dom";
 
 export default class Inventory extends Component {
   render() {
@@ -13,7 +14,7 @@ export default class Inventory extends Component {
             <h5 className="title">ITEM</h5>
             <div className="product-container">
               <h2 className="product-name">{item.name}</h2>
-              <h4 className="text flex-grow">{item.description}</h4>
+              <h4 className="flex-grow">{item.description}</h4>
             </div>
             <h5 className="title">LAST ORDERED</h5>
             <h4 className="text">{item.lastOrder}</h4>
@@ -24,9 +25,22 @@ export default class Inventory extends Component {
             <h5 className="title">STATUS</h5>
             <h4 className="text">{item.status}</h4>
           </div>
-          <div>
-            <img src={defaultIcon} alt="defaultIcon" className="default-icon" />
-          </div>
+          <Link to="/:id" className="inventory__content--default-icon">
+            <svg
+              margin="none"
+              width="4"
+              height="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                className="default-icon"
+                d="M0 2a2 2 0 114 0 2 2 0 01-4 0zm0 8a2 2 0 114 0 2 2 0 01-4 0zm0 8a2 2 0 114 0 2 2 0 01-4 0z"
+                fill="#AFAFAF"
+                fill-rule="evenodd"
+              />
+            </svg>
+            {/* <img src={defaultIcon} alt="defaultIcon" className="default-icon" /> */}
+          </Link>
         </div>
       );
     });
@@ -41,17 +55,21 @@ export default class Inventory extends Component {
           </div>
         </div>
         <div className="inventory__titles">
-          <h5 className="inventory__titles--item">ITEM</h5>
+          <h5 className="inventory__titles--flex-grow">ITEM</h5>
           <h5 className="inventory__titles--item">LAST ORDERED</h5>
           <h5 className="inventory__titles--item">LOCATION</h5>
           <h5 className="inventory__titles--item">QUANTITY</h5>
           <h5 className="inventory__titles--item">STATUS</h5>
-          <h5 className="inventory__titles--item"> </h5>
+          {/* <h5 className="inventory__titles--item"> </h5> */}
         </div>
         {html}
-        <div className="fixed">
-          <img src={addIcon} alt="addIcon" className="fixed__add-icon" />
-        </div>
+        <button className="inventory__fixed">
+          <img
+            src={addIcon}
+            alt="addIcon"
+            className="inventory__fixed--add-icon"
+          />
+        </button>
       </main>
     );
   }

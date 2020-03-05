@@ -8,387 +8,91 @@ export default class Warehouses extends Component {
         <main className="main__warehouses">
           <div className="warehouses__header">
             <h1 className="warehouses__header-text">Locations</h1>
-            <div className="inventory__upper--input">
+            <div className="inventory__upper--input warehouses__upper--input">
               <input type="text" placeholder="Search..." className="input" />
               <img src={searchIcon} alt="searchicon" className="search-icon" />
             </div>
           </div>
 
           <div className="warehouses">
-            <div className="warehouse__header-container">
-              <div className="warehouse__left">
-                <div className="warehouse__second-row">
-                  <div className="warehouse__block warehouse__second warehouse__header-item">
-                    <div className="warehouse__column-name">TITLE</div>
+            <div className="warehouses__columns">
+              <div className="warehouse">
+                {/*  BODY */}
+                <div className="warehouse__body">
+                  {/* TITLE BLOCK */}
+                  <div className="warehouse__title--block">
+                    <div className=" warehouse__address">TITLE</div>
                   </div>
-                  <div className=" warehouse__block warehouse__second">
-                    <div className="warehouse__column-name">CONTACT</div>
+                  {/* TITLE BLOCK FINISH */}
+                  {/* ARROW BLOCK */}
+                  <div className="warehouse__arrow"></div>
+                  {/* END ARROW BLOCK */}
+                  {/* CONTACT BLOCK */}
+                  <div className="warehouse__contact--block">
+                    <div className="warehouse__contact">CONTACT</div>
                   </div>
-                  <div className=" warehouse__block warehouse__third">
-                    <div className="warehouse__column-name">
-                      CONTACT INFORMATION
-                    </div>
+                  {/*  CONTACT BLOCK FINISH */}
+                  {/* CONTACT INFORMATION BLOCK */}
+                  <div className="warehouse__contact-information--block">
+                    <div className="warehouse__phone">CONTACT INFORMATION</div>
                   </div>
-
-                  <div className="warehouse__block warehouse__fourth">
-                    <div className="warehouse__column-name">CATEGORIES</div>
+                  {/*  CONTACT INFORMATION BLOCK FINISH */}
+                  {/* CATEGORIES BLOCK */}
+                  <div className="warehouse__categories--block">
+                    <div className="warehouse__categories">CATEGORIES</div>
                   </div>
+                  {/*  CATEGORIES BLOCK FINISH */}
                 </div>
               </div>
             </div>
-            <div className="warehouse">
-              <div className="warehouse__left">
-                <div className="warehouse__first-row">
-                  <div className=" warehouse__block warehouse__first">
-                    <div className="warehouse__field warehouse__title">
-                      My Cool Warehouse
-                    </div>
-                    <div className=" warehouse__address">
-                      469 King St W, Toronto, ON
-                    </div>
-                  </div>
-                </div>
-                <div className="warehouse__second-row">
-                  <div className=" warehouse__block warehouse__second">
-                    <div className=" warehouse__field warehouse__contact">
-                      Saul Goodman
-                    </div>
-                    <div className=" warehouse__field warehouse__contact-title">
-                      West Wing Boss Hog
-                    </div>
-                  </div>
-                  <div className=" warehouse__block warehouse__third">
-                    <div className="warehouse__field warehouse__phone">
-                      +1 416 678 2345
-                    </div>
-                    <div className=" warehouse__field warehouse__email">
-                      weinberg@instack.com
-                    </div>
-                  </div>
-                  <div className="warehouse__block warehouse__fourth">
-                    <div className=" warehouse__field warehouse__categories">
-                      Industrial, Automotive, Heavy, Mechanical, Engineering
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <div className="warehouse__right">
-                <img
-                  alt="cool arrow"
-                  className="warehouse__arrow"
-                  src={Arrow}
-                ></img>
-              </div>
-            </div>
             <div className="warehouse">
-              <div className="warehouse__left">
-                <div className=" warehouse__block warehouse__first">
+              {/*  BODY */}
+              <div className="warehouse__body">
+                {/* TITLE BLOCK */}
+                <div className="warehouse__title--block">
                   <div className="warehouse__field warehouse__title">
                     My Cool Warehouse
                   </div>
-                  <div className="warehouse__field warehouse__address">
+                  <div className=" warehouse__address">
                     469 King St W, Toronto, ON
                   </div>
                 </div>
-
-                <div className=" warehouse__block warehouse__second">
-                  <div className=" warehouse__field warehouse__contact">
-                    Saul Goodman
-                  </div>
-                  <div className=" warehouse__field warehouse__contact-title">
-                    West Wing Boss Hog
+                {/* TITLE BLOCK FINISH */}
+                {/* ARROW BLOCK */}
+                <div className="warehouse__arrow">
+                  <img
+                    alt="cool arrow"
+                    className="warehouse__arrow"
+                    src={Arrow}
+                  ></img>
+                </div>
+                {/* END ARROW BLOCK */}
+                {/* CONTACT BLOCK */}
+                <div className="warehouse__contact--block">
+                  <div className="warehouse__contact">Mara Weinberg</div>
+                  <div className=" warehouse__contact-title">
+                    Warehouse Manager
                   </div>
                 </div>
-                <div className=" warehouse__block warehouse__third">
-                  <div className="warehouse__field warehouse__phone">
-                    +1 416 678 2345
-                  </div>
-                  <div className=" warehouse__field warehouse__email">
-                    weinberg@instack.com
-                  </div>
+                {/*  CONTACT BLOCK FINISH */}
+                {/* CONTACT INFORMATION BLOCK */}
+                <div className="warehouse__contact-information--block">
+                  <div className="warehouse__phone">+1 416 678 2345</div>
+                  <div className=" warehouse__email">weinberg@instack.com</div>
                 </div>
-
-                <div className="warehouse__block warehouse__fourth">
-                  <div className=" warehouse__field warehouse__categories">
+                {/*  CONTACT INFORMATION BLOCK FINISH */}
+                {/* CATEGORIES BLOCK */}
+                <div className="warehouse__categories--block">
+                  <div className="warehouse__categories">
                     Industrial, Automotive, Heavy, Mechanical, Engineering,
                     Transportation
                   </div>
                 </div>
-              </div>
-
-              <div className="warehouse__right">
-                <img
-                  alt="cool arrow"
-                  className="warehouse__arrow"
-                  src={Arrow}
-                ></img>
+                {/*  CATEGORIES BLOCK FINISH */}
               </div>
             </div>
-            <div className="warehouse">
-              <div className="warehouse__left">
-                <div className=" warehouse__block warehouse__first">
-                  <div className="warehouse__field warehouse__title">
-                    My Cool Warehouse
-                  </div>
-                  <div className="warehouse__field warehouse__address">
-                    469 King St W, Toronto, ON
-                  </div>
-                </div>
-
-                <div className=" warehouse__block warehouse__second">
-                  <div className=" warehouse__field warehouse__contact">
-                    Saul Goodman
-                  </div>
-                  <div className=" warehouse__field warehouse__contact-title">
-                    West Wing Boss Hog
-                  </div>
-                </div>
-                <div className=" warehouse__block warehouse__third">
-                  <div className="warehouse__field warehouse__phone">
-                    +1 416 678 2345
-                  </div>
-                  <div className=" warehouse__field warehouse__email">
-                    weinberg@instack.com
-                  </div>
-                </div>
-
-                <div className="warehouse__block warehouse__fourth">
-                  <div className=" warehouse__field warehouse__categories">
-                    Industrial, Automotive, Heavy, Mechanical, Engineering,
-                    Transportation
-                  </div>
-                </div>
-              </div>
-
-              <div className="warehouse__right">
-                <img
-                  alt="cool arrow"
-                  className="warehouse__arrow"
-                  src={Arrow}
-                ></img>
-              </div>
-            </div>
-            <div className="warehouse">
-              <div className="warehouse__left">
-                <div className=" warehouse__block warehouse__first">
-                  <div className="warehouse__field warehouse__title">
-                    My Cool Warehouse
-                  </div>
-                  <div className="warehouse__field warehouse__address">
-                    469 King St W, Toronto, ON
-                  </div>
-                </div>
-
-                <div className=" warehouse__block warehouse__second">
-                  <div className=" warehouse__field warehouse__contact">
-                    Saul Goodman
-                  </div>
-                  <div className=" warehouse__field warehouse__contact-title">
-                    West Wing Boss Hog
-                  </div>
-                </div>
-                <div className=" warehouse__block warehouse__third">
-                  <div className="warehouse__field warehouse__phone">
-                    +1 416 678 2345
-                  </div>
-                  <div className=" warehouse__field warehouse__email">
-                    weinberg@instack.com
-                  </div>
-                </div>
-
-                <div className="warehouse__block warehouse__fourth">
-                  <div className=" warehouse__field warehouse__categories">
-                    Industrial, Automotive, Heavy, Mechanical, Engineering,
-                    Transportation
-                  </div>
-                </div>
-              </div>
-
-              <div className="warehouse__right">
-                <img
-                  alt="cool arrow"
-                  className="warehouse__arrow"
-                  src={Arrow}
-                ></img>
-              </div>
-            </div>
-            <div className="warehouse">
-              <div className="warehouse__left">
-                <div className=" warehouse__block warehouse__first">
-                  <div className="warehouse__field warehouse__title">
-                    My Cool Warehouse
-                  </div>
-                  <div className="warehouse__field warehouse__address">
-                    469 King St W, Toronto, ON
-                  </div>
-                </div>
-
-                <div className=" warehouse__block warehouse__second">
-                  <div className=" warehouse__field warehouse__contact">
-                    Saul Goodman
-                  </div>
-                  <div className=" warehouse__field warehouse__contact-title">
-                    West Wing Boss Hog
-                  </div>
-                </div>
-                <div className=" warehouse__block warehouse__third">
-                  <div className="warehouse__field warehouse__phone">
-                    +1 416 678 2345
-                  </div>
-                  <div className=" warehouse__field warehouse__email">
-                    weinberg@instack.com
-                  </div>
-                </div>
-
-                <div className="warehouse__block warehouse__fourth">
-                  <div className=" warehouse__field warehouse__categories">
-                    Industrial, Automotive, Heavy, Mechanical, Engineering,
-                    Transportation
-                  </div>
-                </div>
-              </div>
-
-              <div className="warehouse__right">
-                <img
-                  alt="cool arrow"
-                  className="warehouse__arrow"
-                  src={Arrow}
-                ></img>
-              </div>
-            </div>
-            <div className="warehouse">
-              <div className="warehouse__left">
-                <div className=" warehouse__block warehouse__first">
-                  <div className="warehouse__field warehouse__title">
-                    My Cool Warehouse
-                  </div>
-                  <div className="warehouse__field warehouse__address">
-                    469 King St W, Toronto, ON
-                  </div>
-                </div>
-
-                <div className=" warehouse__block warehouse__second">
-                  <div className=" warehouse__field warehouse__contact">
-                    Saul Goodman
-                  </div>
-                  <div className=" warehouse__field warehouse__contact-title">
-                    West Wing Boss Hog
-                  </div>
-                </div>
-                <div className=" warehouse__block warehouse__third">
-                  <div className="warehouse__field warehouse__phone">
-                    +1 416 678 2345
-                  </div>
-                  <div className=" warehouse__field warehouse__email">
-                    weinberg@instack.com
-                  </div>
-                </div>
-
-                <div className="warehouse__block warehouse__fourth">
-                  <div className=" warehouse__field warehouse__categories">
-                    Industrial, Automotive, Heavy, Mechanical, Engineering,
-                    Transportation
-                  </div>
-                </div>
-              </div>
-
-              <div className="warehouse__right">
-                <img
-                  alt="cool arrow"
-                  className="warehouse__arrow"
-                  src={Arrow}
-                ></img>
-              </div>
-            </div>
-            <div className="warehouse">
-              <div className="warehouse__left">
-                <div className=" warehouse__block warehouse__first">
-                  <div className="warehouse__field warehouse__title">
-                    My Cool Warehouse
-                  </div>
-                  <div className="warehouse__field warehouse__address">
-                    469 King St W, Toronto, ON
-                  </div>
-                </div>
-
-                <div className=" warehouse__block warehouse__second">
-                  <div className=" warehouse__field warehouse__contact">
-                    Saul Goodman
-                  </div>
-                  <div className=" warehouse__field warehouse__contact-title">
-                    West Wing Boss Hog
-                  </div>
-                </div>
-                <div className=" warehouse__block warehouse__third">
-                  <div className="warehouse__field warehouse__phone">
-                    +1 416 678 2345
-                  </div>
-                  <div className=" warehouse__field warehouse__email">
-                    weinberg@instack.com
-                  </div>
-                </div>
-
-                <div className="warehouse__block warehouse__fourth">
-                  <div className=" warehouse__field warehouse__categories">
-                    Industrial, Automotive, Heavy, Mechanical, Engineering,
-                    Transportation
-                  </div>
-                </div>
-              </div>
-
-              <div className="warehouse__right">
-                <img
-                  alt="cool arrow"
-                  className="warehouse__arrow"
-                  src={Arrow}
-                ></img>
-              </div>
-            </div>
-            <div className="warehouse">
-              <div className="warehouse__left">
-                <div className=" warehouse__block warehouse__first">
-                  <div className="warehouse__field warehouse__title">
-                    My Cool Warehouse
-                  </div>
-                  <div className="warehouse__field warehouse__address">
-                    469 King St W, Toronto, ON
-                  </div>
-                </div>
-
-                <div className=" warehouse__block warehouse__second">
-                  <div className=" warehouse__field warehouse__contact">
-                    Saul Goodman
-                  </div>
-                  <div className=" warehouse__field warehouse__contact-title">
-                    West Wing Boss Hog
-                  </div>
-                </div>
-                <div className=" warehouse__block warehouse__third">
-                  <div className="warehouse__field warehouse__phone">
-                    +1 416 678 2345
-                  </div>
-                  <div className=" warehouse__field warehouse__email">
-                    weinberg@instack.com
-                  </div>
-                </div>
-
-                <div className="warehouse__block warehouse__fourth">
-                  <div className=" warehouse__field warehouse__categories">
-                    Industrial, Automotive, Heavy, Mechanical, Engineering,
-                    Transportation
-                  </div>
-                </div>
-              </div>
-
-              <div className="warehouse__right">
-                <img
-                  alt="cool arrow"
-                  className="warehouse__arrow"
-                  src={Arrow}
-                ></img>
-              </div>
-            </div>
+            {/* BODY FINISH */}
           </div>
         </main>
       </>
