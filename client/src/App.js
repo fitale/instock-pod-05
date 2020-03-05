@@ -14,17 +14,31 @@ export default class App extends Component {
     inventory: [],
     warehouses: []
   };
+  getInventory() {
+    return axios.get("http://localhost:5000/api/inventory");
+  }
 
-  componentDidMount() {
-    axios.get("http://localhost:5000/api/inventory").then(res1 => {
-      this.setState(
-        {
-          inventory: res1.data,
-          warehouses: []
-        },
-        console.log(res1.data)
-      );
-    });
+  getWarehouses() {
+    return axios.get("http://localhost:5000/api/warehouses");
+  }
+
+  async componentDidMount() {
+    axios
+      .all([this.getWarehouses(), this.getInventory()])
+      .then(
+        axios.spread((...responses) => {
+          const responseOne = responses[0];
+          const responseTwo = responses[1];
+
+          this.setState({
+            warehouses: responseOne.data,
+            inventory: responseTwo.data
+          });
+        })
+      )
+      .catch(errors => {
+        console.log(errors);
+      });
   }
 
   componentDidCatch(error, errorInfo) {
@@ -54,9 +68,13 @@ export default class App extends Component {
                 )}
                 exact
               />
-              <Route path="/warehouses" component={Warehouses}></Route>
+              <Route
+                path="/warehouses"
+                render={props => (
+                  <Warehouses {...props} warehouses={this.state.warehouses} />
+                )}
+              ></Route>
             </Switch>
-            {/* <Inventory inventory={this.state.inventory} /> */}
           </Router>
         </>
       );
