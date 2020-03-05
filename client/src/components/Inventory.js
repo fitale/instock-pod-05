@@ -2,11 +2,28 @@ import React, { Component } from "react";
 import searchIcon from "../assets/icons/icon-search.svg";
 import addIcon from "../assets/icons/icon-add.svg";
 import { Link } from "react-router-dom";
+import ReactModal from "react-modal";
+import ModalComp from "./ModalComp";
 
 export default class Inventory extends Component {
+  state = {
+    showModal: false
+  };
+
+  handleOpenModal = () => {
+    this.setState({
+      showModal: true
+    });
+  };
+
+  handleCloseModal = () => {
+    this.setState({
+      showModal: false
+    });
+  };
+
   render() {
     let html = this.props.inventory.map(item => {
-      // console.log(this.props.inventory);
       return (
         <div key={item.id} className="inventory__content">
           <div className="inventory__content--data">
@@ -35,15 +52,13 @@ export default class Inventory extends Component {
                 className="default-icon"
                 d="M0 2a2 2 0 114 0 2 2 0 01-4 0zm0 8a2 2 0 114 0 2 2 0 01-4 0zm0 8a2 2 0 114 0 2 2 0 01-4 0z"
                 fill="#AFAFAF"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               />
             </svg>
-            {/* <img src={defaultIcon} alt="defaultIcon" className="default-icon" /> */}
           </Link>
         </div>
       );
     });
-    // console.log(typeof html);
     return (
       <main className="inventory">
         <div className="inventory__upper">
@@ -59,16 +74,33 @@ export default class Inventory extends Component {
           <h5 className="inventory__titles--item">LOCATION</h5>
           <h5 className="inventory__titles--item">QUANTITY</h5>
           <h5 className="inventory__titles--item">STATUS</h5>
-          {/* <h5 className="inventory__titles--item"> </h5> */}
         </div>
         {html}
-        <button className="inventory__fixed">
+        <Link to="/createnew" className="inventory__fixed">
           <img
             src={addIcon}
             alt="addIcon"
             className="inventory__fixed--add-icon"
           />
+        </Link>
+
+        <button
+          onClick={this.handleOpenModal}
+          to="/createnew"
+          className="inventory__desk-fixed"
+        >
+          <img
+            src={addIcon}
+            alt="addIcon"
+            className="inventory__desk-fixed--add-icon"
+          />
         </button>
+        <ReactModal
+          isOpen={this.state.showModal}
+          contentLabel="Minimal Modal Example"
+        >
+          <ModalComp closeModalNow={this.handleCloseModal} />
+        </ReactModal>
       </main>
     );
   }

@@ -9,7 +9,7 @@ import Header from "./components/Header";
 import Inventory from "./components/Inventory";
 import Warehouses from "./components/Warehouses";
 // import Product from "./components/Product";
-import Modal from "./components/Modal";
+import ModalComp from "./components/ModalComp";
 
 export default class App extends Component {
   state = {
@@ -76,7 +76,7 @@ export default class App extends Component {
                   <Warehouses {...props} warehouses={this.state.warehouses} />
                 )}
               ></Route>
-              <Route path="/createnew" component={Modal} />
+              <Route path="/createnew" component={ModalComp} />
             </Switch>
           </Router>
         </>
