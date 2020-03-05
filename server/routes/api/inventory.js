@@ -34,4 +34,26 @@ router.get("/:id", (req, res) => {
   }
 });
 
+router.post("/", (req, res) => {
+  const newInventory = {
+    id: helper.getNewId(),
+    name: req.name,
+    address: req.address,
+    contact: req.contactName,
+    contact_title: req.contact_title,
+    phone: req.phone,
+    email: req.email,
+    categories: req.categories
+  };
+  if (!newInventory.title || !newInventory.description) {
+    return res.status(400).json({
+      errorMessage:
+        "Please provide title, description, and imageUrl for the video"
+    });
+  }
+  inventorys.push(newInventory);
+  helper.writeJSONFile(inventorysFile, inventorys);
+  res.json(inventorys);
+});
+
 module.exports = router;
