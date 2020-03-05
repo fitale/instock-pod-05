@@ -1,157 +1,165 @@
 .warehouses {
-  @include flex-row-wrap;
   &__header-text {
-    padding-bottom: 16px;
-  }
-  &__header-text {
-    @include mobile-header;
+    padding: 32px 0px 16px 0px;
   }
 }
-// hide the column names on every platform except desktop
-.warehouse__header-container {
-  display: none;
-}
-//warehouse container
 .main__warehouses {
-  padding: 32px 24px 32px 24px;
+  padding: 0px 16px;
+}
+.warehouses__columns {
+  display: none;
+  visibility: hidden;
 }
 .warehouse {
+  //make the whole thing, including the arrow not wrap
   @include flex-row-nowrap;
-  box-sizing: border-box;
-  padding: 24px 0px;
-  border-bottom: 2px solid $text-border;
-  max-width: 100%;
+  @include mobile-paragraph;
 
-  //gets the second warehouse and removes the padding to match the mockup
-  &:nth-child(2) {
-    padding-top: 0px;
-  }
-
-  &__left {
-    width: 80vw;
-  }
-  &__right {
-    width: 20vw;
-  }
-  &__arrow {
-    padding: 24px 0px 0px 0px;
-  }
-  &__block {
+  //wrap all the items/rows in the warehouse main body
+  &__body {
     @include flex-row-wrap;
-    padding: 24px 0px 0px 0px;
-  }
-  &__field {
-    @include flex-row-nowrap;
     width: 100vw;
+    padding-bottom: 24px;
+    border-bottom: 2px solid $text-border;
   }
   &__title {
     @include mobile-subheader;
     font-size: 1rem;
     padding-bottom: 5px;
+    &--block {
+      width: 80vw;
+      padding-bottom: 24px;
+    }
   }
-  &__first {
-    padding: 8px 0px 0px 0px;
+  &__phone {
+    padding-bottom: 5px;
   }
-  &__contact-title {
-    font-style: italic;
+  &__contact {
+    padding-bottom: 5px;
+    &--block {
+      width: 70%;
+      padding-bottom: 24px;
+    }
+    &-title {
+      font-style: italic;
+    }
+    &-information {
+      &--block {
+        padding-bottom: 24px;
+        width: 70%;
+      }
+    }
+  }
+  &__categories {
+    &--block {
+      width: 100%;
+    }
+  }
+  &__arrow {
+    &--block {
+      width: 10vw;
+    }
   }
 }
 
 @include medium {
   .warehouses {
-    width: 100vw;
-    padding: 0px 24px 0px 24px;
+    &__upper--input {
+      padding-bottom: 0px;
+    }
     &__header {
       @include flex-row-nowrap;
       justify-content: space-between;
+      padding: 48px 0px;
+      & > .inventory__upper--input {
+        margin-bottom: 0px;
+        align-self: flex-end;
+      }
+      &-text {
+        padding: 0px;
+      }
     }
   }
+  .main__warehouses {
+    padding: 0px 24px;
+  }
   .warehouse {
-    width: 100vw;
-    &__left {
-      justify-content: space-between;
-      width: 90vw;
-    }
-
-    &__right {
-      @include flex-column-nowrap;
-      // flex-direction: flex-start;
-      align-self: flex-start;
-      width: 5vw;
-    }
-    &__field {
-      max-width: 200px;
-    }
-    &__first {
-      &-row {
-        @include flex-row-nowrap;
-        width: 100%;
-      }
-      &-row > .warehouse__first > .warehouse__title {
-        width: 100vw;
+    &__title {
+      &--block {
+        width: 90vw;
       }
     }
-
-    &__second {
-      &-row {
-        @include flex-row-nowrap;
-        width: 100%;
+    &__contact {
+      &--block {
+        width: 33%;
+      }
+      &-information {
+        &--block {
+          width: 33%;
+        }
       }
     }
-    &__field {
-      width: auto;
-    }
-    &__address {
-      @include flex-row-nowrap;
-      width: 100%;
+    &__categories {
+      &--block {
+        width: 33%;
+      }
     }
   }
 }
+
 @include huge {
-  .warehouse__header-container {
-    display: flex;
+  .warehouses {
+    padding: 0px 180px;
+    &__header {
+      padding: 0px 180px;
+      &-text {
+        padding: 48px 0px;
+      }
+      & > .inventory__upper--input {
+        margin-top: 40px;
+        align-self: flex-start;
+      }
+    }
+
+    &__columns {
+      @include desk-tablet-header;
+      color: $text-label;
+      font-weight: bold;
+      visibility: visible;
+      display: inherit;
+      & > .warehouse > .warehouse__body {
+        border: none;
+      }
+    }
   }
   .warehouse {
-    @include flex-row-nowrap;
-    justify-content: space-between;
-    //header columns
-    &__column-name {
-      @include mobile-labels;
-      color: $text-label;
-      width: 100%;
-    }
-    //manage left side and right side
-    &__left {
+    &__body {
       @include flex-row-nowrap;
-      justify-content: space-between;
-      width: 80vw;
-      &-header {
-        @include flex-row-nowrap;
-        justify-content: space-between;
-        width: 80vw;
+      padding-bottom: 0px;
+    }
+    &__title {
+      &--block {
+        order: 1;
+        width: 20vw;
       }
     }
-    &__field {
-      width: 100%;
-    }
-    // &__block
-    @include flex-row-nowrap;
-    &__first {
-      &-row {
-        justify-content: space-between;
-        @include flex-row-wrap;
-        width: auto;
+    &__contact {
+      &--block {
+        order: 2;
+      }
+      &-information {
+        &--block {
+          order: 3;
+        }
       }
     }
-    &__second {
-      @include flex-row-wrap;
-      &-row {
-        justify-content: space-between;
-        @include flex-row-wrap;
+    &__categories {
+      &--block {
+        order: 4;
       }
     }
-    &__header-container {
-      padding-bottom: 32px;
+    &__arrow {
+      order: 5;
     }
   }
 }
