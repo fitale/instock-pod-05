@@ -45,7 +45,7 @@ router.post("/", (req, res) => {
     quantity: req.quantity,
     status: req.status,
     orderedBy: req.orderedBy,
-    referenceNumber: req.referenceNumber,
+    referenceNumber: "JK2020FD7811201",
     categories: req.categories
   };
   if (!newInventory.name || !newInventory.description) {
