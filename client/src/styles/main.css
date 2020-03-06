@@ -1517,7 +1517,7 @@
   cursor: pointer;
 }
 
-.create-new__container--description {
+.create-new__container--description .description {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: AvenirDemi;
@@ -1603,6 +1603,39 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .create-new__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-family: AvenirBold;
+    color: #323232;
+  }
+  .create-new__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .create-new__container--flex .title {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-family: AvenirDemi;
+    margin-top: 24px;
+  }
+  .create-new__container--flex .input {
+    width: 220px;
+    height: 48px;
+  }
+  .create-new__container--description .description {
+    width: 480px;
+  }
   .create-new__container--button .cancel {
     display: none;
   }
@@ -1623,6 +1656,31 @@
     border: 0.0625rem solid #002f5f;
     cursor: pointer;
   }
+}
+
+.container {
+  position: relative;
+}
+
+.container__remove {
+  position: absolute;
+  right: 1px;
+  width: 160px;
+  height: 40px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  outline: none;
+}
+
+.container__remove:hover {
+  cursor: pointer;
+  background-color: #fafafa;
+}
+
+.container__remove--text {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: AvenirRegular;
 }
 
 *,

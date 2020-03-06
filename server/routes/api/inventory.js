@@ -34,24 +34,44 @@ router.get("/:id", (req, res) => {
   }
 });
 
-router.delete("/:reference", (req, res) => {
-  const found = inventory.some(
-    item => item.reference === req.params.referenceNumber
-  );
+router.delete("/:id", (req, res) => {
+  const found = inventory.some(item => item.id === req.params.id);
   if (found) {
-    const itemAfterDelete = inventory.filter(
-      item => item.reference !== req.params.referenceNumber
-    );
+    const itemAfterDelete = inventory.filter(item => item.id !== req.params.id);
     helper.writeJSONFile(inventoryFile, itemAfterDelete);
     res.json({
-      msg: `Inventory item with ID: ${req.params.referenceNumber} has been deleted`,
+      msg: `Inventory item with ID: ${req.params.id} has been deleted`,
       inventory: itemAfterDelete
     });
   } else {
     res.status(404).json({
-      errorMessage: `Inventory item with ID: ${req.params.referenceNumber} not found`
+      errorMessage: `Inventory item with ID: ${req.params.id} not found`
     });
   }
+});
+
+router.post("/", (req, res) => {
+  const newInventory = {
+    id: helper.getNewId(),
+    name: req.name,
+    description: req.description,
+    lastOrder: req.lastOrder,
+    city: req.city,
+    country: req.country,
+    quantity: req.quantity,
+    status: req.status,
+    orderedBy: req.orderedBy,
+    referenceNumber: "JK2020FD7811201",
+    categories: req.categories
+  };
+  if (!newInventory.name || !newInventory.description) {
+    return res.status(400).json({
+      errorMessage: "Please provide all the required fields."
+    });
+  }
+  inventorys.push(newInventory);
+  helper.writeJSONFile(inventorysFile, inventorys);
+  res.json(inventorys);
 });
 
 module.exports = router;
