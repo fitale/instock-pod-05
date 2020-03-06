@@ -34,4 +34,24 @@ router.get("/:id", (req, res) => {
   }
 });
 
+router.delete("/:reference", (req, res) => {
+  const found = inventory.some(
+    item => item.reference === req.params.referenceNumber
+  );
+  if (found) {
+    const itemAfterDelete = inventory.filter(
+      item => item.reference !== req.params.referenceNumber
+    );
+    helper.writeJSONFile(inventoryFile, itemAfterDelete);
+    res.json({
+      msg: `Inventory item with ID: ${req.params.referenceNumber} has been deleted`,
+      inventory: itemAfterDelete
+    });
+  } else {
+    res.status(404).json({
+      errorMessage: `Inventory item with ID: ${req.params.referenceNumber} not found`
+    });
+  }
+});
+
 module.exports = router;
