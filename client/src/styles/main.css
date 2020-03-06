@@ -705,6 +705,17 @@
   text-decoration: none;
 }
 
+.navigation__options a, .navigation__options-text:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navigation__options:active {
+  color: #fff;
+  border-bottom: 5px #fff solid;
+  text-decoration: none;
+}
+
 /*tablet breakpoint*/
 @media only screen and (min-width: 768px) {
   .header {
@@ -800,6 +811,15 @@
     color: #afafaf;
     margin-bottom: 0px;
   }
+  .navigation__options a, .navigation__options-text:active {
+    color: #fff;
+    text-decoration: none;
+  }
+  .navigation__options:active {
+    color: #fff;
+    border-bottom: 5px #fff solid;
+    text-decoration: none;
+  }
   /*desktop breakpoint*/
 }
 
@@ -882,6 +902,10 @@
     color: #fff;
     border-bottom: 5px #fff solid;
   }
+  __options .navigation__options:active {
+    color: #fff;
+    border-bottom: 5px #fff solid;
+  }
   __options a, __options__options-text {
     width: 70px;
     height: 100%;
@@ -899,6 +923,15 @@
     font-family: AvenirBold;
     text-decoration: none;
     color: #afafaf;
+  }
+  __options a, __options-text:active {
+    color: #fff;
+    text-decoration: none;
+  }
+  __options:active {
+    color: #fff;
+    border-bottom: 5px #fff solid;
+    text-decoration: none;
   }
 }
 
@@ -1515,6 +1548,21 @@
 .create-new__container--flex .input:hover {
   border: 0.0625rem solid #002f5f;
   cursor: pointer;
+}
+
+.create-new__container .status__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.create-new__container .status__details-text {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: AvenirRegular;
 }
 
 .create-new__container--description {

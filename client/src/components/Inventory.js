@@ -4,10 +4,16 @@ import addIcon from "../assets/icons/icon-add.svg";
 import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
 import ModalComp from "./ModalComp";
+import Switch from 'react-switch';
 
 export default class Inventory extends Component {
-  state = {
-    showModal: false
+  constructor() {
+    super();
+  
+  this.state = {
+    showModal: false,
+  };
+    
   };
 
   handleOpenModal = () => {
@@ -56,6 +62,11 @@ export default class Inventory extends Component {
               />
             </svg>
           </Link>
+
+
+
+
+
         </div>
       );
     });

@@ -31,6 +31,17 @@
         }
       }
     }
+
+    .status__details {
+      display: flex;
+      justify-content: space-between;
+
+      &-text {
+        @include mobile-paragraph;
+      }
+
+    }
+
     &--description {
       @include mobile-subheader;
       color: $text-label;
