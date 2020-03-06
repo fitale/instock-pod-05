@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
 import Warehouses from "./components/Warehouses";
-// import Product from "./components/Product";
+import Product from "./components/Product";
 import ModalComp from "./components/ModalComp";
 
 export default class App extends Component {
@@ -51,6 +51,7 @@ export default class App extends Component {
   }
 
   render() {
+    // console.log(this.state.inventory);
     if ((this.state.inventory.length || this.state.warehouses.length) === 0) {
       return (
         <div>
@@ -77,6 +78,7 @@ export default class App extends Component {
                 )}
               ></Route>
               <Route path="/createnew" component={ModalComp} />
+              <Route path="/:id" component={Product} />
             </Switch>
           </Router>
         </>

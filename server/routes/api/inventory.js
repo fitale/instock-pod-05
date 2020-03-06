@@ -34,6 +34,22 @@ router.get("/:id", (req, res) => {
   }
 });
 
+router.delete("/:id", (req, res) => {
+  const found = inventory.some(item => item.id === req.params.id);
+  if (found) {
+    const itemAfterDelete = inventory.filter(item => item.id !== req.params.id);
+    helper.writeJSONFile(inventoryFile, itemAfterDelete);
+    res.json({
+      msg: `Inventory item with ID: ${req.params.id} has been deleted`,
+      inventory: itemAfterDelete
+    });
+  } else {
+    res.status(404).json({
+      errorMessage: `Inventory item with ID: ${req.params.id} not found`
+    });
+  }
+});
+
 router.post("/", (req, res) => {
   const newInventory = {
     id: helper.getNewId(),

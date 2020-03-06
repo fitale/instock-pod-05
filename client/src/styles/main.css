@@ -1658,6 +1658,31 @@
   }
 }
 
+.container {
+  position: relative;
+}
+
+.container__remove {
+  position: absolute;
+  right: 1px;
+  width: 160px;
+  height: 40px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  outline: none;
+}
+
+.container__remove:hover {
+  cursor: pointer;
+  background-color: #fafafa;
+}
+
+.container__remove--text {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: AvenirRegular;
+}
+
 *,
 html,
 body {
