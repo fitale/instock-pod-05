@@ -4,6 +4,30 @@ const inventory = require(inventoryFile);
 const helper = require("../../helper/helper");
 const router = express.Router();
 
+router.post("/", (req, res) => {
+  const newInventory = {
+    id: helper.getNewId(),
+    name: req.body.name,
+    description: req.body.description,
+    lastOrder: req.body.lastOrder,
+    city: req.body.city,
+    country: req.body.country,
+    quantity: req.body.quantity,
+    status: req.body.status,
+    orderedBy: req.body.orderedBy,
+    referenceNumber: "JK2020FD7811201",
+    categories: req.body.categories
+  };
+  if (!newInventory.name || !newInventory.description) {
+    return res.status(400).json({
+      errorMessage: "Please provide all the required fields."
+    });
+  }
+  console.log(newInventory);
+  inventory.push(newInventory);
+  helper.writeJSONFile(inventoryFile, inventory);
+  res.json(inventory);
+});
 router.get("/", (req, res) => {
   const inventoryList = inventory.map(item => {
     return {
@@ -32,30 +56,6 @@ router.get("/:id", (req, res) => {
       errorMessage: `Item with ID: ${req.params.id} not found`
     });
   }
-});
-
-router.post("/", (req, res) => {
-  const newInventory = {
-    id: helper.getNewId(),
-    name: req.name,
-    description: req.description,
-    lastOrder: req.lastOrder,
-    city: req.city,
-    country: req.country,
-    quantity: req.quantity,
-    status: req.status,
-    orderedBy: req.orderedBy,
-    referenceNumber: "JK2020FD7811201",
-    categories: req.categories
-  };
-  if (!newInventory.name || !newInventory.description) {
-    return res.status(400).json({
-      errorMessage: "Please provide all the required fields."
-    });
-  }
-  inventorys.push(newInventory);
-  helper.writeJSONFile(inventorysFile, inventorys);
-  res.json(inventorys);
 });
 
 module.exports = router;
