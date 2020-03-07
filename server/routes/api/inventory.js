@@ -5,6 +5,7 @@ const helper = require("../../helper/helper");
 const router = express.Router();
 
 router.post("/", (req, res) => {
+  console.log(req.body, "req.body^^^^^");
   const newInventory = {
     id: helper.getNewId(),
     name: req.body.name,
@@ -18,12 +19,13 @@ router.post("/", (req, res) => {
     referenceNumber: "JK2020FD7811201",
     categories: req.body.categories
   };
-  if (!newInventory.name || !newInventory.description) {
-    return res.status(400).json({
-      errorMessage: "Please provide all the required fields."
-    });
-  }
-  console.log(newInventory);
+  // console.log("New Product: ", newInventory);
+  // if (!newInventory.name || !newInventory.description) {
+  //   return res.status(400).json({
+  //     errorMessage: "Please provide all the required fields."
+  //   });
+  // }
+  // console.log(inventory, "INVENTORY^^^");
   inventory.push(newInventory);
   helper.writeJSONFile(inventoryFile, inventory);
   res.json(inventory);

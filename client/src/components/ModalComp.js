@@ -6,14 +6,7 @@ export default class Modal extends Component {
     super(props);
     this.name = React.createRef();
     this.description = React.createRef();
-    this.lastOrder = React.createRef();
-    this.city = React.createRef();
-    this.country = React.createRef();
-    this.quantity = React.createRef();
-    this.status = React.createRef();
-    this.orderedBy = React.createRef();
-    this.referenceNumber = React.createRef();
-    this.categories = React.createRef();
+    this.price = React.createRef();
     this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
   }
 
@@ -22,10 +15,9 @@ export default class Modal extends Component {
     const newInventory = {
       name: this.name.value,
       description: this.description.value,
-      lastOrder: this.lastOrder.value,
-      city: this.city.value,
-      country: this.country.value,
-      quantity: this.quantity.value,
+      city: "Toronto",
+      country: "Canada",
+      quantity: "12,000",
       status: "in-stock",
       orderedBy: "Mark Saunders",
       referenceNumber: "JK2020FD7811201",
@@ -58,7 +50,7 @@ export default class Modal extends Component {
     event.preventDefault();
     await this.uploadAProduct(); //upload the video
     // const videoRedirectId = this.state.videos.slice(-1).pop()["id"]; // get the ID of the last submitted video
-    alert("video posted!");
+    // alert("video posted!");
     // await window.location.replace("/videos/" + videoRedirectId); //redirect to the last posted video
   }
   render() {
@@ -67,7 +59,7 @@ export default class Modal extends Component {
         <h1 className="create-new__title">Create New</h1>
         <div className="create-new__container">
           <div className="create-new__container--flex">
-            <h5 className="title">PRODUCT</h5>
+            <h5 className="title">Menu Item Name</h5>
             <input
               ref={name => {
                 this.name = name;
@@ -79,56 +71,14 @@ export default class Modal extends Component {
             />
           </div>
           <div className="create-new__container--flex">
-            <h5 className="title">LAST ORDERED</h5>
+            <h5 className="title">Price</h5>
             <input
-              ref={lastOrder => {
-                this.lastOrder = lastOrder;
+              ref={price => {
+                this.price = price;
               }}
               type="text"
-              placeholder="yyyy-mm-dd"
               className="input"
             />
-          </div>
-        </div>
-        <div className="create-new__container">
-          <div className="create-new__container--flex">
-            <h5 className="title">CITY</h5>
-            <input
-              ref={city => {
-                this.city = city;
-              }}
-              type="text"
-              placeholder="City"
-              className="input"
-            />
-          </div>
-          <div className="create-new__container--flex">
-            <h5 className="title">COUNTRY</h5>
-            <input
-              ref={country => {
-                this.country = country;
-              }}
-              type="text"
-              placeholder="Dropdown"
-              className="input"
-            />
-          </div>
-        </div>
-        <div className="create-new__container">
-          <div className="create-new__container--flex">
-            <h5 className="title">QUANTITY</h5>
-            <input
-              ref={quantity => {
-                this.quantity = quantity;
-              }}
-              type="text"
-              placeholder="0"
-              className="input"
-            />
-          </div>
-          <div className="create-new__container--flex">
-            <h5 className="title">STATUS</h5>
-            <p>in stock or out of stock and switch</p>
           </div>
         </div>
         <div className="create-new__container">

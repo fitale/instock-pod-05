@@ -4,10 +4,12 @@ import addIcon from "../assets/icons/icon-add.svg";
 import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
 import ModalComp from "./ModalComp";
-
+import Remove from "./Remove";
 export default class Inventory extends Component {
   state = {
-    showModal: false
+    showModal: false,
+    inventory: [],
+    isHovering: false
   };
 
   handleOpenModal = () => {
@@ -19,6 +21,19 @@ export default class Inventory extends Component {
   handleCloseModal = () => {
     this.setState({
       showModal: false
+    });
+  };
+
+  // appears for every svg element on page - need to link to specific ID
+  toggleHoverState = () => {
+    return this.setState({
+      isHovering: true
+    });
+  };
+
+  toggleHoverLeave = () => {
+    return this.setState({
+      isHovering: false
     });
   };
 
@@ -41,7 +56,12 @@ export default class Inventory extends Component {
             <h5 className="title">STATUS</h5>
             <h4 className="text">{item.status}</h4>
           </div>
-          <Link to="/:id" className="inventory__content--default-icon">
+          <Link
+            onMouseEnter={this.toggleHoverState}
+            onMouseLeave={this.toggleHoverLeave}
+            to="/:id"
+            className="inventory__content--default-icon"
+          >
             <svg
               margin="none"
               width="4"
@@ -55,6 +75,7 @@ export default class Inventory extends Component {
                 fillRule="evenodd"
               />
             </svg>
+            {this.state.isHovering && <Remove />}
           </Link>
         </div>
       );
@@ -83,7 +104,6 @@ export default class Inventory extends Component {
             className="inventory__fixed--add-icon"
           />
         </Link>
-
         <button
           onClick={this.handleOpenModal}
           to="/createnew"
