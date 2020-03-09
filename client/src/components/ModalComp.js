@@ -1,11 +1,29 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Switch from 'react-switch';
 import axios from "axios";
 export default class Modal extends Component {
   constructor(props) {
     super(props);
     this.name = React.createRef();
     this.description = React.createRef();
+    this.lastOrder = React.createRef();
+    this.city = React.createRef();
+    this.country = React.createRef();
+    this.quantity = React.createRef();
+    this.status = React.createRef();
+    this.orderedBy = React.createRef();
+    this.referenceNumber = React.createRef();
+    this.categories = React.createRef();
+
+    this.state = {
+      checked: false
+    };
+     this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(checked) {
+    this.setState({checked})
     this.price = React.createRef();
     this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
   }
@@ -71,6 +89,23 @@ export default class Modal extends Component {
             />
           </div>
           <div className="create-new__container--flex">
+            <h5 className="title">STATUS</h5>
+            <label className="status__details">
+              <p className="status__details-text">
+                <b>{this.state.checked ? "In Stock" : "Out Of Stock"}</b>
+              </p>
+              <Switch
+                className="status__details-actual"
+                onChange={this.handleChange}
+                checked={this.state.checked}
+                onColor="#9acd32"
+                onHandleColor="##808080"
+                uncheckedIcon={false}
+                checkedIcon={false}
+                width={40}
+                height={24}
+              />
+            </label>
             <h5 className="title">Price</h5>
             <input
               ref={price => {
