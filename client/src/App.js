@@ -14,7 +14,8 @@ import ModalComp from "./components/ModalComp";
 export default class App extends Component {
   state = {
     inventory: [],
-    warehouses: []
+    warehouses: [],
+    count: 0
   };
   getInventory() {
     return axios.get("http://localhost:5000/api/inventory");
@@ -23,7 +24,12 @@ export default class App extends Component {
   getWarehouses() {
     return axios.get("http://localhost:5000/api/warehouses");
   }
-
+  updateTheState = props => {
+    console.log("props in update the state", props);
+    this.setState({
+      inventory: props
+    });
+  };
   async componentDidMount() {
     axios
       .all([this.getWarehouses(), this.getInventory()])
@@ -42,23 +48,36 @@ export default class App extends Component {
         console.log(errors);
       });
   }
-  componentDidUpdate() {
-    axios
-      .all([this.getWarehouses(), this.getInventory()])
-      .then(
-        axios.spread((...responses) => {
-          const responseOne = responses[0];
-          const responseTwo = responses[1];
 
-          this.setState({
-            warehouses: responseOne.data,
-            inventory: responseTwo.data
-          });
-        })
-      )
-      .catch(errors => {
-        console.log(errors);
-      });
+  async componentDidUpdate(prevProps, prevState) {
+    // if (this.state.count < 1) {
+    //   console.log("this.state", this.state);
+    //   console.log("this.props", this.props);
+    //   console.log("prevProps", prevProps);
+    //   console.log("prevState", prevState);
+    // }
+    // validation to prevent infinite loop
+    // if (
+    //   prevState.match.params.id &&
+    //   this.state.match.params.id &&
+    //   prevState.match.params.id !== this.state.match.params.id
+    // ) {
+    //   axios
+    //     .all([this.getWarehouses(), this.getInventory()])
+    //     .then(
+    //       axios.spread((...responses) => {
+    //         const responseOne = responses[0];
+    //         const responseTwo = responses[1];
+    //         this.setState({
+    //           warehouses: responseOne.data,
+    //           inventory: responseTwo.data
+    //         });
+    //       })
+    //     )
+    //     .catch(errors => {
+    //       console.log(errors);
+    //     });
+    // }
   }
 
   componentDidCatch(error, errorInfo) {
@@ -85,7 +104,11 @@ export default class App extends Component {
               <Route
                 path="/"
                 render={props => (
-                  <Inventory {...props} inventory={this.state.inventory} />
+                  <Inventory
+                    {...props}
+                    updateTheState={this.updateTheState}
+                    inventory={this.state.inventory}
+                  />
                 )}
                 exact
               />
