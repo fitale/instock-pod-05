@@ -48,15 +48,11 @@ export default class Modal extends Component {
         "Sales"
       ]
     };
-    // console.log(this.categories.value.split(","));
-    console.log("new inventory item: ", newInventory);
     //use await and async to make sure all the videos are grabbed
     await axios
       .post("http://localhost:5000/api/inventory", newInventory)
       .then(res => {
-        this.setState({
-          inventory: res.data
-        });
+        this.props.updateTheState(res.data);
         return this.state;
       })
       .catch(err => {
@@ -66,10 +62,8 @@ export default class Modal extends Component {
   //setup the on click event, using async to confirm the upload is done before redirect
   async handleUploadSubmit(event) {
     event.preventDefault();
+    this.props.closeModalNow();
     await this.uploadAProduct(); //upload the video
-    // const videoRedirectId = this.state.videos.slice(-1).pop()["id"]; // get the ID of the last submitted video
-    // alert("video posted!");
-    // await window.location.replace("/videos/" + videoRedirectId); //redirect to the last posted video
   }
   render() {
     return (
@@ -82,7 +76,6 @@ export default class Modal extends Component {
               ref={name => {
                 this.name = name;
               }}
-              // ref={(this.name = input)}
               type="text"
               placeholder="Item Name"
               className="input"
