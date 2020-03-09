@@ -56,6 +56,23 @@ export default class App extends Component {
     });
   }
 
+  deleteHandler = event => {
+    axios
+      .delete(`http://localhost:5000/api/inventory/${this.props.deleteItem}`)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  //setup the on click event, using async to confirm the upload is done before redirect
+  async handleUploadSubmit(event) {
+    event.preventDefault();
+    this.props.closeModalNow();
+    await this.uploadAProduct(); //upload the video
+  }
   render() {
     if ((this.state.inventory.length || this.state.warehouses.length) === 0) {
       return (
@@ -75,6 +92,7 @@ export default class App extends Component {
                   <Inventory
                     {...props}
                     updateTheState={this.updateTheState}
+                    deleteHandler={this.deleteHandler}
                     inventory={this.state.inventory}
                   />
                 )}

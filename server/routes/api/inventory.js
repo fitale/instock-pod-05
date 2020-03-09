@@ -30,9 +30,38 @@ router.post("/", (req, res) => {
   res.json(inventory);
 });
 router.get("/", (req, res) => {
-  res.json(inventory);
+  const inventoryList = inventory.map(item => {
+    return {
+      id: helper.getNewId(),
+      name: item.name,
+      description: item.description,
+      lastOrder: item.lastOrder,
+      city: item.city,
+      country: item.country,
+      quantity: item.quantity,
+      status: item.status,
+      orderedBy: item.orderedBy,
+      referenceNumber: item.referenceNumber,
+      categories: item.categories
+    };
+  });
+  res.json(inventoryList);
 });
-
+router.delete("/:id", (req, res) => {
+  const found = inventory.some(item => item.id === req.params.id);
+  if (found) {
+    const itemAfterDelete = inventory.filter(item => item.id !== req.params.id);
+    helper.writeJSONFile(inventoryFile, itemAfterDelete);
+    res.json({
+      msg: `Inventory item with ID: ${req.params.id} has been deleted`,
+      inventory: itemAfterDelete
+    });
+  } else {
+    res.status(404).json({
+      errorMessage: `Inventory item with ID: ${req.params.id} not found`
+    });
+  }
+});
 router.get("/:id", (req, res) => {
   const found = inventory.some(item => item.id === req.params.id);
   if (found) {
