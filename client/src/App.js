@@ -42,6 +42,24 @@ export default class App extends Component {
         console.log(errors);
       });
   }
+  componentDidUpdate() {
+    axios
+      .all([this.getWarehouses(), this.getInventory()])
+      .then(
+        axios.spread((...responses) => {
+          const responseOne = responses[0];
+          const responseTwo = responses[1];
+
+          this.setState({
+            warehouses: responseOne.data,
+            inventory: responseTwo.data
+          });
+        })
+      )
+      .catch(errors => {
+        console.log(errors);
+      });
+  }
 
   componentDidCatch(error, errorInfo) {
     this.setState({

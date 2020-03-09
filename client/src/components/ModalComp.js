@@ -30,8 +30,6 @@ export default class Modal extends Component {
         "Sales"
       ]
     };
-    // console.log(this.categories.value.split(","));
-    console.log("new inventory item: ", newInventory);
     //use await and async to make sure all the videos are grabbed
     await axios
       .post("http://localhost:5000/api/inventory", newInventory)

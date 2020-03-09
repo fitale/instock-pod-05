@@ -5,7 +5,6 @@ const helper = require("../../helper/helper");
 const router = express.Router();
 
 router.post("/", (req, res) => {
-  console.log(req.body, "req.body^^^^^");
   const newInventory = {
     id: helper.getNewId(),
     name: req.body.name,
