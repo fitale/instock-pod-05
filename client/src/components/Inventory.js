@@ -85,7 +85,12 @@ export default class Inventory extends Component {
                 fillRule="evenodd"
               />{" "}
             </svg>
-            {this.state.isShowing[index] && <Remove deleteItem={item.id} />}
+            {this.state.isShowing[index] && (
+              <Remove
+                deleteHandler={this.props.deleteHandler}
+                deleteItem={item.id}
+              />
+            )}
           </div>
         </div>
       );
