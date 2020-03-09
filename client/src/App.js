@@ -49,37 +49,6 @@ export default class App extends Component {
       });
   }
 
-  async componentDidUpdate(prevProps, prevState) {
-    // if (this.state.count < 1) {
-    //   console.log("this.state", this.state);
-    //   console.log("this.props", this.props);
-    //   console.log("prevProps", prevProps);
-    //   console.log("prevState", prevState);
-    // }
-    // validation to prevent infinite loop
-    // if (
-    //   prevState.match.params.id &&
-    //   this.state.match.params.id &&
-    //   prevState.match.params.id !== this.state.match.params.id
-    // ) {
-    //   axios
-    //     .all([this.getWarehouses(), this.getInventory()])
-    //     .then(
-    //       axios.spread((...responses) => {
-    //         const responseOne = responses[0];
-    //         const responseTwo = responses[1];
-    //         this.setState({
-    //           warehouses: responseOne.data,
-    //           inventory: responseTwo.data
-    //         });
-    //       })
-    //     )
-    //     .catch(errors => {
-    //       console.log(errors);
-    //     });
-    // }
-  }
-
   componentDidCatch(error, errorInfo) {
     this.setState({
       error: error,
@@ -88,7 +57,6 @@ export default class App extends Component {
   }
 
   render() {
-    // console.log(this.state.inventory);
     if ((this.state.inventory.length || this.state.warehouses.length) === 0) {
       return (
         <div>
