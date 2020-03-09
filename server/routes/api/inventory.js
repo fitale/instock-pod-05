@@ -30,22 +30,7 @@ router.post("/", (req, res) => {
   res.json(inventory);
 });
 router.get("/", (req, res) => {
-  const inventoryList = inventory.map(item => {
-    return {
-      id: helper.getNewId(),
-      name: item.name,
-      description: item.description,
-      lastOrder: item.lastOrder,
-      city: item.city,
-      country: item.country,
-      quantity: item.quantity,
-      status: item.status,
-      orderedBy: item.orderedBy,
-      referenceNumber: item.referenceNumber,
-      categories: item.categories
-    };
-  });
-  res.json(inventoryList);
+  res.json(inventory);
 });
 
 router.get("/:id", (req, res) => {
