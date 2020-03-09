@@ -14,7 +14,8 @@ import ModalComp from "./components/ModalComp";
 export default class App extends Component {
   state = {
     inventory: [],
-    warehouses: []
+    warehouses: [],
+    count: 0
   };
   getInventory() {
     return axios.get("http://localhost:5000/api/inventory");
@@ -23,7 +24,12 @@ export default class App extends Component {
   getWarehouses() {
     return axios.get("http://localhost:5000/api/warehouses");
   }
-
+  updateTheState = props => {
+    console.log("props in update the state", props);
+    this.setState({
+      inventory: props
+    });
+  };
   async componentDidMount() {
     axios
       .all([this.getWarehouses(), this.getInventory()])
@@ -51,7 +57,6 @@ export default class App extends Component {
   }
 
   render() {
-    // console.log(this.state.inventory);
     if ((this.state.inventory.length || this.state.warehouses.length) === 0) {
       return (
         <div>
@@ -67,7 +72,11 @@ export default class App extends Component {
               <Route
                 path="/"
                 render={props => (
-                  <Inventory {...props} inventory={this.state.inventory} />
+                  <Inventory
+                    {...props}
+                    updateTheState={this.updateTheState}
+                    inventory={this.state.inventory}
+                  />
                 )}
                 exact
               />

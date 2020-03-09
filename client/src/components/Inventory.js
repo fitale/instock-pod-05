@@ -4,7 +4,10 @@ import addIcon from "../assets/icons/icon-add.svg";
 import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
 import ModalComp from "./ModalComp";
+import Switch from "react-switch";
 import Remove from "./Remove";
+const uuid = require("uuid/v4");
+
 export default class Inventory extends Component {
   state = {
     showModal: false,
@@ -88,7 +91,7 @@ export default class Inventory extends Component {
       );
     });
     return (
-      <main className="inventory">
+      <main key={uuid()} className="inventory">
         <div className="inventory__upper">
           <h1 className="inventory__upper--title">Inventory</h1>
           <div className="inventory__upper--input">
@@ -123,10 +126,15 @@ export default class Inventory extends Component {
           />
         </button>
         <ReactModal
+          ariaHideApp={false}
           isOpen={this.state.showModal}
           contentLabel="Minimal Modal Example"
         >
-          <ModalComp closeModalNow={this.handleCloseModal} />
+          <ModalComp
+            closeModalNow={this.handleCloseModal}
+            inventory={this.props.inventory}
+            updateTheState={this.props.updateTheState}
+          />
         </ReactModal>
       </main>
     );
