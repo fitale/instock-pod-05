@@ -9,8 +9,18 @@ export default class Inventory extends Component {
   state = {
     showModal: false,
     inventory: [],
-    isHovering: false
+    isShowing: []
   };
+
+  componentDidMount() {
+    const tempArr = [];
+    this.props.inventory.forEach(item => {
+      tempArr.push(false);
+    });
+    this.setState({
+      isShowing: tempArr
+    });
+  }
 
   handleOpenModal = () => {
     this.setState({
@@ -24,24 +34,23 @@ export default class Inventory extends Component {
     });
   };
 
-  // appears for every svg element on page - need to link to specific ID
-  toggleHoverState = () => {
-    return this.setState({
-      isHovering: true
-    });
-  };
-
-  toggleHoverLeave = () => {
-    return this.setState({
-      isHovering: false
-    });
+  removeDropDown = (event, index, id) => {
+    const tempArr = this.state.isShowing;
+    tempArr[index] = true;
+    this.setState(
+      {
+        isShowing: tempArr
+      },
+      () => console.log(this.state.isShowing)
+    );
   };
 
   render() {
-    let html = this.props.inventory.map(item => {
+    console.log(this.props.inventory);
+    let html = this.props.inventory.map((item, index) => {
       return (
         <div key={item.id} className="inventory__content">
-          <div className="inventory__content--data">
+          <Link to="/:id" className="inventory__content--data">
             <h5 className="title">ITEM</h5>
             <div className="product-container">
               <h2 className="product-name">{item.name}</h2>
@@ -55,13 +64,9 @@ export default class Inventory extends Component {
             <h4 className="text">{item.quantity}</h4>
             <h5 className="title">STATUS</h5>
             <h4 className="text">{item.status}</h4>
-          </div>
-          <Link
-            onMouseEnter={this.toggleHoverState}
-            onMouseLeave={this.toggleHoverLeave}
-            to="/:id"
-            className="inventory__content--default-icon"
-          >
+          </Link>
+
+          <div className="inventory__content--default-icon">
             <svg
               margin="none"
               width="4"
@@ -69,14 +74,16 @@ export default class Inventory extends Component {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
+                // key={item.id}
+                onClick={event => this.removeDropDown(event, index, item.id)}
                 className="default-icon"
                 d="M0 2a2 2 0 114 0 2 2 0 01-4 0zm0 8a2 2 0 114 0 2 2 0 01-4 0zm0 8a2 2 0 114 0 2 2 0 01-4 0z"
                 fill="#AFAFAF"
                 fillRule="evenodd"
-              />
+              />{" "}
             </svg>
-            {this.state.isHovering && <Remove />}
-          </Link>
+            {this.state.isShowing[index] && <Remove deleteItem={item.id} />}
+          </div>
         </div>
       );
     });

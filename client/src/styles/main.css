@@ -1658,11 +1658,11 @@
   }
 }
 
-.container {
+.remove {
   position: relative;
 }
 
-.container__remove {
+.remove__remove {
   position: absolute;
   right: 1px;
   width: 160px;
@@ -1672,12 +1672,12 @@
   outline: none;
 }
 
-.container__remove:hover {
+.remove__remove:hover {
   cursor: pointer;
   background-color: #fafafa;
 }
 
-.container__remove--text {
+.remove__remove--text {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-family: AvenirRegular;

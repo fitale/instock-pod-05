@@ -1,5 +1,6 @@
 [
   {
+    "id": "6230d91e-ecc5-4f8d-a1cc-04d9f4102bfc",
     "name": "Product Name Here",
     "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
     "lastOrder": "05/08/2020",
@@ -19,6 +20,7 @@
     ]
   },
   {
+    "id": "306d3926-92a7-486c-a3f1-0621a2ceb69d",
     "name": "Product Name Here",
     "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
     "lastOrder": "05/08/2020",
@@ -38,6 +40,7 @@
     ]
   },
   {
+    "id": "b4eab3a2-d154-423f-84f7-1d14971799d8",
     "name": "Product Name Here",
     "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
     "lastOrder": "05/08/2020",
@@ -57,6 +60,7 @@
     ]
   },
   {
+    "id": "b4e923bb-7660-48bd-8097-39d1da3d5e1b",
     "name": "Product Name Here",
     "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
     "lastOrder": "05/08/2020",
@@ -76,6 +80,7 @@
     ]
   },
   {
+    "id": "a35669f5-f37c-4b49-8ac1-b8770fbb69f6",
     "name": "Product Name Here",
     "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
     "lastOrder": "05/08/2020",
@@ -95,6 +100,7 @@
     ]
   },
   {
+    "id": "469d5152-97d2-4c74-a8b2-89e7acf539e0",
     "name": "Product Name Here",
     "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
     "lastOrder": "05/08/2020",
@@ -114,6 +120,7 @@
     ]
   },
   {
+    "id": "47e722f0-f075-4cf1-bdc4-6926b74f3df1",
     "name": "Product Name Here",
     "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
     "lastOrder": "05/08/2020",
@@ -133,6 +140,7 @@
     ]
   },
   {
+    "id": "11d86a82-c796-454d-9b22-2443f442dd07",
     "name": "Product Name Here",
     "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
     "lastOrder": "05/08/2020",
@@ -152,6 +160,7 @@
     ]
   },
   {
+    "id": "a0d7cdc8-00f5-482a-8c45-c87d457d0cd9",
     "name": "Product Name Here",
     "description": "Here is a very brief description of the product name, its uses, industries and possible attributes that could be used to describe the product.",
     "lastOrder": "05/08/2020",
@@ -160,32 +169,6 @@
     "quantity": "12,000",
     "status": "In Stock",
     "orderedBy": "Mark Saunders",
-    "referenceNumber": "JK2020FD7811201",
-    "categories": [
-      "Industrial",
-      "Automotive",
-      "Heavy",
-      "Mechanical",
-      "Engineering",
-      "Sales"
-    ]
-  },
-  {
-    "id": "bf88391c-1db7-4e8c-b37f-192c4ecbacc5",
-    "name": "sadfsdaf",
-    "description": "fdsafdsa",
-    "city": "fdsafdasfdsa",
-    "country": "fdasfdsa",
-    "quantity": "fdsafdsafdsa",
-    "referenceNumber": "JK2020FD7811201"
-  },
-  {
-    "id": "0a39fdbf-3f1f-4559-b952-9feb9752b40d",
-    "name": "kljdfsafkjlsdfkjdl",
-    "description": "sjklfdakdsal",
-    "city": "jkdslajfkdslfjkdsa",
-    "country": "jkldsafjksdalfjk",
-    "quantity": "jskdlafjkfdlasfjkasl",
     "referenceNumber": "JK2020FD7811201",
     "categories": [
       "Industrial",
