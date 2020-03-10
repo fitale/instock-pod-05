@@ -4,8 +4,9 @@ import addIcon from "../assets/icons/icon-add.svg";
 import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
 import ModalComp from "./ModalComp";
-import Switch from "react-switch";
+// import Switch from "react-switch";
 import Remove from "./Remove";
+
 const uuid = require("uuid/v4");
 
 export default class Inventory extends Component {
@@ -49,7 +50,6 @@ export default class Inventory extends Component {
   };
 
   render() {
-    console.log(this.props.inventory);
     let html = this.props.inventory.map((item, index) => {
       return (
         <div key={item.id} className="inventory__content">
@@ -68,7 +68,6 @@ export default class Inventory extends Component {
             <h5 className="title">STATUS</h5>
             <h4 className="text">{item.status}</h4>
           </Link>
-
           <div className="inventory__content--default-icon">
             <svg
               margin="none"
@@ -77,7 +76,6 @@ export default class Inventory extends Component {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                // key={item.id}
                 onClick={event => this.removeDropDown(event, index, item.id)}
                 className="default-icon"
                 d="M0 2a2 2 0 114 0 2 2 0 01-4 0zm0 8a2 2 0 114 0 2 2 0 01-4 0zm0 8a2 2 0 114 0 2 2 0 01-4 0z"

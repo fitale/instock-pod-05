@@ -17,6 +17,7 @@ export default class App extends Component {
     warehouses: [],
     count: 0
   };
+
   getInventory() {
     return axios.get("http://localhost:5000/api/inventory");
   }
@@ -30,6 +31,7 @@ export default class App extends Component {
       inventory: props
     });
   };
+
   async componentDidMount() {
     axios
       .all([this.getWarehouses(), this.getInventory()])
@@ -57,6 +59,8 @@ export default class App extends Component {
   }
 
   render() {
+    console.log(this.state.inventory.id);
+
     if ((this.state.inventory.length || this.state.warehouses.length) === 0) {
       return (
         <div>
