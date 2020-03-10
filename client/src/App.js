@@ -58,9 +58,14 @@ export default class App extends Component {
     });
   }
 
-  render() {
-    console.log(this.state.inventory.id);
+  //setup the on click event, using async to confirm the upload is done before redirect
+  async handleUploadSubmit(event) {
+    event.preventDefault();
+    this.props.closeModalNow();
+    await this.uploadAProduct(); //upload the video
+  }
 
+  render() {
     if ((this.state.inventory.length || this.state.warehouses.length) === 0) {
       return (
         <div>

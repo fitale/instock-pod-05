@@ -1,32 +1,35 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Switch from 'react-switch';
+import Switch from "react-switch";
 import axios from "axios";
 export default class Modal extends Component {
   constructor(props) {
     super(props);
     this.name = React.createRef();
     this.description = React.createRef();
-    this.lastOrder = React.createRef();
-    this.city = React.createRef();
-    this.country = React.createRef();
-    this.quantity = React.createRef();
-    this.status = React.createRef();
-    this.orderedBy = React.createRef();
-    this.referenceNumber = React.createRef();
-    this.categories = React.createRef();
+    this.price = React.createRef();
+    this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
+
+    // this.lastOrder = React.createRef();
+    // this.city = React.createRef();
+    // this.country = React.createRef();
+    // this.quantity = React.createRef();
+    // this.status = React.createRef();
+    // this.orderedBy = React.createRef();
+    // this.referenceNumber = React.createRef();
+    // this.categories = React.createRef();
 
     this.state = {
       checked: false
     };
-     this.handleChange = this.handleChange.bind(this);
+    //  this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(checked) {
-    this.setState({checked})
-    this.price = React.createRef();
-    this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
-  }
+  // handleChange(checked) {
+  //   this.setState({checked})
+  //   this.price = React.createRef();
+  //   this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
+  // }
 
   async uploadAProduct() {
     //Create the video object
@@ -66,18 +69,68 @@ export default class Modal extends Component {
     await this.uploadAProduct(); //upload the video
   }
   render() {
+    let count = 0;
+    count = count + 1;
     return (
       <form onSubmit={this.handleUploadSubmit} className="create-new">
         <h1 className="create-new__title">Create New</h1>
         <div className="create-new__container">
           <div className="create-new__container--flex">
-            <h5 className="title">Menu Item Name</h5>
+            <h5 className="title">PRODUCT</h5>
             <input
               ref={name => {
                 this.name = name;
               }}
               type="text"
               placeholder="Item Name"
+              className="input"
+            />
+          </div>
+          <div className="create-new__container--flex">
+            <h5 className="title">LAST ORDERED</h5>
+            <input
+              ref={lastOrder => {
+                this.lastOrder = lastOrder;
+              }}
+              type="text"
+              placeholder="Last Ordered"
+              className="input"
+            />
+          </div>
+        </div>
+        <div className="create-new__container">
+          <div className="create-new__container--flex">
+            <h5 className="title">CITY</h5>
+            <input
+              ref={city => {
+                this.city = city;
+              }}
+              type="text"
+              placeholder="City"
+              className="input"
+            />
+          </div>
+          <div className="create-new__container--flex">
+            <h5 className="title">COUNTRY</h5>
+            <input
+              ref={country => {
+                this.country = country;
+              }}
+              type="text"
+              placeholder="Country"
+              className="input"
+            />
+          </div>
+        </div>
+        <div className="create-new__container">
+          <div className="create-new__container--flex">
+            <h5 className="title">QUANTITY</h5>
+            <input
+              ref={price => {
+                this.price = price;
+              }}
+              placeholder="Quantity"
+              type="text"
               className="input"
             />
           </div>
@@ -99,14 +152,6 @@ export default class Modal extends Component {
                 height={24}
               />
             </label>
-            <h5 className="title">Price</h5>
-            <input
-              ref={price => {
-                this.price = price;
-              }}
-              type="text"
-              className="input"
-            />
           </div>
         </div>
         <div className="create-new__container">
