@@ -9,9 +9,8 @@ export default class Modal extends Component {
     super(props);
     this.name = React.createRef();
     this.description = React.createRef();
-    this.price = React.createRef();
+    // this.price = React.createRef();
     this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
-
     // this.lastOrder = React.createRef();
     // this.city = React.createRef();
     // this.country = React.createRef();
@@ -24,26 +23,24 @@ export default class Modal extends Component {
     this.state = {
       checked: false
     };
-    //  this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-
-  // handleChange(checked) {
-  //   this.setState({checked})
-  //   this.price = React.createRef();
-  //   this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
-  // }
-
-  // }
+  handleChange(checked) {
+    this.setState({ checked });
+    this.price = React.createRef();
+    this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
+  }
 
   async uploadAProduct() {
     //Create the video object
     const newInventory = {
       name: this.name.value,
       description: this.description.value,
+      lastOrder: "05/08/2020",
       city: "Toronto",
       country: "Canada",
       quantity: "12,000",
-      status: "in-stock",
+      status: "In-stock",
       orderedBy: "Mark Saunders",
       referenceNumber: "JK2020FD7811201",
       categories: [
@@ -97,7 +94,7 @@ export default class Modal extends Component {
                 this.lastOrder = lastOrder;
               }}
               type="text"
-              placeholder="Last Ordered"
+              placeholder="yyyy-mm-dd"
               className="input"
             />
           </div>
@@ -134,7 +131,7 @@ export default class Modal extends Component {
               ref={price => {
                 this.price = price;
               }}
-              placeholder="Quantity"
+              placeholder="0"
               type="text"
               className="input"
             />
@@ -159,7 +156,7 @@ export default class Modal extends Component {
             </label>
           </div>
         </div>
-        <div className="create-new__container">
+        <div className="create-new__tablet-flex">
           <h5 className="create-new__container--description">
             ITEM DESCRIPTION
           </h5>
