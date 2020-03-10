@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class Delete extends Component {
   // Remove handler deletes item after page refresh
@@ -9,6 +10,7 @@ export default class Delete extends Component {
       .delete(`http://localhost:5000/api/inventory/${this.props.deleteItem}`)
       .then(res => {
         console.log(res);
+        window.location.reload(false);
       })
       .catch(err => {
         console.log(err);
