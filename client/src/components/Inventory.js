@@ -6,7 +6,6 @@ import ReactModal from "react-modal";
 import ModalComp from "./ModalComp";
 import Switch from 'react-switch';
 import Remove from "./Remove";
-
 const uuid = require("uuid/v4");
 
 
