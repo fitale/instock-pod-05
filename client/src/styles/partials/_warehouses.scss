@@ -1,11 +1,20 @@
 .warehouses {
   &__header-text {
     padding: 32px 0px 16px 0px;
+
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: AvenirBold;
+    margin-bottom: 1rem;
+    color: #323232;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
   }
 }
 .main__warehouses {
   padding: 0px 16px;
 }
+
 .warehouses__columns {
   padding-top: 0px;
   display: none;
@@ -80,6 +89,9 @@
         align-self: flex-end;
       }
       &-text {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+        font-family: AvenirBold;
         padding: 0px;
       }
     }
@@ -89,7 +101,9 @@
   }
   .warehouse {
     padding-top: 24px;
-
+    &:first-child() {
+      padding-top: 0px;
+    }
     &__title {
       &--block {
         width: 90vw;
@@ -133,6 +147,12 @@
       font-weight: bold;
       visibility: visible;
       display: inherit;
+      margin-bottom: -24px;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      font-family: AvenirDemi;
+      color: #afafaf;
+      // width: 15vw;
       & > .warehouse > .warehouse__body {
         border: none;
       }
