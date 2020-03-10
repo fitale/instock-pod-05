@@ -4,7 +4,6 @@ import addIcon from "../assets/icons/icon-add.svg";
 import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
 import ModalComp from "./ModalComp";
-import Switch from 'react-switch';
 import Remove from "./Remove";
 const uuid = require("uuid/v4");
 
@@ -40,12 +39,9 @@ export default class Inventory extends Component {
   removeDropDown = (event, index, id) => {
     const tempArr = this.state.isShowing;
     tempArr[index] = true;
-    this.setState(
-      {
-        isShowing: tempArr
-      },
-      () => console.log(this.state.isShowing)
-    );
+    this.setState({
+      isShowing: tempArr
+    });
   };
 
   render() {

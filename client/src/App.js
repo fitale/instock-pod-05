@@ -26,7 +26,6 @@ export default class App extends Component {
     return axios.get("http://localhost:5000/api/warehouses");
   }
   updateTheState = props => {
-    console.log("props in update the state", props);
     this.setState({
       inventory: props
     });
@@ -58,11 +57,10 @@ export default class App extends Component {
     });
   }
 
-  //setup the on click event, using async to confirm the upload is done before redirect
   async handleUploadSubmit(event) {
     event.preventDefault();
     this.props.closeModalNow();
-    await this.uploadAProduct(); //upload the video
+    await this.uploadAProduct();
   }
 
   render() {
