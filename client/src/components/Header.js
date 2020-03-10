@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../assets/logos/logo-instock.svg";
-import ReactDOM from "react-dom";
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -9,14 +8,18 @@ export default class Header extends React.Component {
   }
 
   componentDidMount = () => {
+    //handle active page underline for the header
     const inventory_header = document.getElementsByClassName(
       "inventory_header"
     );
     const location_header = document.getElementsByClassName("location_header");
+
+    //if the page is warehouses, underline location
     if (window.location.pathname === "/warehouses/") {
       location_header[0].classList.add("active");
       inventory_header[0].classList.remove("active");
     } else {
+      //otherwise, underline the inventory
       inventory_header[0].classList.add("active");
       location_header[0].classList.remove("active");
     }

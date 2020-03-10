@@ -1,24 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import Switch from "react-switch";
-
 import axios from "axios";
+
 export default class Modal extends Component {
   constructor(props) {
     super(props);
     this.name = React.createRef();
     this.description = React.createRef();
-    // this.price = React.createRef();
     this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
-    // this.lastOrder = React.createRef();
-    // this.city = React.createRef();
-    // this.country = React.createRef();
-    // this.quantity = React.createRef();
-    // this.status = React.createRef();
-    // this.orderedBy = React.createRef();
-    // this.referenceNumber = React.createRef();
-    // this.categories = React.createRef();
 
     this.state = {
       checked: false
@@ -32,7 +22,6 @@ export default class Modal extends Component {
   }
 
   async uploadAProduct() {
-    //Create the video object
     const newInventory = {
       name: this.name.value,
       description: this.description.value,
@@ -63,11 +52,10 @@ export default class Modal extends Component {
         console.log(err);
       });
   }
-  //setup the on click event, using async to confirm the upload is done before redirect
   async handleUploadSubmit(event) {
     event.preventDefault();
     this.props.closeModalNow();
-    await this.uploadAProduct(); //upload the video
+    await this.uploadAProduct();
   }
   render() {
     let count = 0;
