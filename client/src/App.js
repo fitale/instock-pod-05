@@ -33,6 +33,8 @@ export default class App extends Component {
   };
 
   async componentDidMount() {
+    console.log(window.location.pathname);
+
     axios
       .all([this.getWarehouses(), this.getInventory()])
       .then(
