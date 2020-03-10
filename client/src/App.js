@@ -84,6 +84,7 @@ export default class App extends Component {
                   <Inventory
                     {...props}
                     updateTheState={this.updateTheState}
+                    deleteHandler={this.deleteHandler}
                     inventory={this.state.inventory}
                   />
                 )}

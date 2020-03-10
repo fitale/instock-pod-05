@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
 import Switch from "react-switch";
+
 import axios from "axios";
 export default class Modal extends Component {
   constructor(props) {
@@ -9,6 +11,7 @@ export default class Modal extends Component {
     this.description = React.createRef();
     this.price = React.createRef();
     this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
+
 
     // this.lastOrder = React.createRef();
     // this.city = React.createRef();
@@ -30,6 +33,9 @@ export default class Modal extends Component {
   //   this.price = React.createRef();
   //   this.handleUploadSubmit = this.handleUploadSubmit.bind(this);
   // }
+
+  }
+
 
   async uploadAProduct() {
     //Create the video object
@@ -87,6 +93,7 @@ export default class Modal extends Component {
             />
           </div>
           <div className="create-new__container--flex">
+
             <h5 className="title">LAST ORDERED</h5>
             <input
               ref={lastOrder => {
@@ -125,10 +132,12 @@ export default class Modal extends Component {
         <div className="create-new__container">
           <div className="create-new__container--flex">
             <h5 className="title">QUANTITY</h5>
+
             <input
               ref={price => {
                 this.price = price;
               }}
+
               placeholder="Quantity"
               type="text"
               className="input"
@@ -152,6 +161,11 @@ export default class Modal extends Component {
                 height={24}
               />
             </label>
+
+              type="text"
+              className="input"
+            />
+
           </div>
         </div>
         <div className="create-new__container">
