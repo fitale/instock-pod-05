@@ -17,6 +17,7 @@
         width: 75vw;
         height: 3rem;
         outline: none;
+        padding-left: 2.1875rem;
         &:placeholder-shown {
           padding-left: 2.1875rem;
           font-family: AvenirRegular;
@@ -41,13 +42,16 @@
     border-bottom: 0.125rem solid $text-border;
     justify-content: space-between;
     &--data {
+      text-decoration: none;
       .product-container {
         .product-name {
           @include mobile-subheader;
           margin-top: 1rem;
+          color: $para-and-nav;
         }
         .flex-grow {
           @include mobile-paragraph;
+          color: $para-and-nav;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: normal;
@@ -62,6 +66,7 @@
         margin-top: 1.5rem;
       }
       .text {
+        color: $para-and-nav;
         @include mobile-paragraph;
         margin: 1rem 0 1.5rem;
       }
@@ -69,11 +74,13 @@
     &--default-icon {
       @include flex-column-wrap;
       border: unset;
+      position: relative;
       .default-icon {
         margin-top: 1.5rem;
         margin-right: 0.625rem;
         &:hover {
           fill: $black;
+          cursor: pointer;
         }
       }
     }

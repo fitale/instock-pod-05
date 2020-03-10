@@ -1,0 +1,29 @@
+.remove {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  &__remove {
+    width: 160px;
+    height: 40px;
+    border: 1px solid $text-border;
+    border-radius: 4px;
+    outline: none;
+    &:hover {
+      cursor: pointer;
+      background-color: $text-bg-fill;
+    }
+    &--text {
+      @include mobile-paragraph;
+    }
+  }
+}
+
+@include medium {
+  .remove {
+    &__remove {
+      &--text {
+        @include desk-tablet-para-comment;
+      }
+    }
+  }
+}

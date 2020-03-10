@@ -106,5 +106,5 @@ dist
 # TernJS port file
 .tern-port
 
-client/styles/main.css
-client/styles/main.css.map
+main.css
+main.css.map

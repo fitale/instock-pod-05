@@ -5,22 +5,7 @@ const helper = require("../../helper/helper");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  const inventoryList = inventory.map(item => {
-    return {
-      id: helper.getNewId(),
-      name: item.name,
-      description: item.description,
-      lastOrder: item.lastOrder,
-      city: item.city,
-      country: item.country,
-      quantity: item.quantity,
-      status: item.status,
-      orderedBy: item.orderedBy,
-      referenceNumber: item.referenceNumber,
-      categories: item.categories
-    };
-  });
-  res.json(inventoryList);
+  res.json(inventory);
 });
 
 router.get("/:id", (req, res) => {
@@ -34,28 +19,40 @@ router.get("/:id", (req, res) => {
   }
 });
 
+router.delete("/:id", (req, res) => {
+  const found = inventory.some(item => item.id === req.params.id);
+  if (found) {
+    const itemAfterDelete = inventory.filter(item => item.id !== req.params.id);
+    helper.writeJSONFile(inventoryFile, itemAfterDelete);
+    res.json({
+      msg: `Inventory item with ID: ${req.params.id} has been deleted`,
+      inventory: itemAfterDelete
+    });
+  } else {
+    res.status(404).json({
+      errorMessage: `Inventory item with ID: ${req.params.id} not found`
+    });
+  }
+});
+
 router.post("/", (req, res) => {
   const newInventory = {
     id: helper.getNewId(),
-    name: req.name,
-    description: req.description,
-    lastOrder: req.lastOrder,
-    city: req.city,
-    country: req.country,
-    quantity: req.quantity,
-    status: req.status,
-    orderedBy: req.orderedBy,
+    name: req.body.name,
+    description: req.body.description,
+    lastOrder: req.body.lastOrder,
+    city: req.body.city,
+    country: req.body.country,
+    quantity: req.body.quantity,
+    status: req.body.status,
+    orderedBy: req.body.orderedBy,
     referenceNumber: "JK2020FD7811201",
-    categories: req.categories
+    categories: req.body.categories
   };
-  if (!newInventory.name || !newInventory.description) {
-    return res.status(400).json({
-      errorMessage: "Please provide all the required fields."
-    });
-  }
-  inventorys.push(newInventory);
-  helper.writeJSONFile(inventorysFile, inventorys);
-  res.json(inventorys);
+  inventory.push(newInventory);
+  helper.writeJSONFile(inventoryFile, inventory);
+  res.json(inventory);
 });
+
 
 module.exports = router;

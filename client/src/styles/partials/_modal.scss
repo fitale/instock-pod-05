@@ -21,6 +21,7 @@
         height: 2.5rem;
         outline: none;
         margin-top: 0.5rem;
+        padding-left: 1rem;
         &:placeholder-shown {
           padding-left: 1rem;
           font-family: AvenirRegular;
@@ -31,10 +32,23 @@
         }
       }
     }
+    .status__details {
+      display: flex;
+      justify-content: space-between;
+      &-text {
+        @include mobile-paragraph;
+      }
+    }
+
     &--description {
+      margin-top: 1.5rem;
       @include mobile-subheader;
       color: $text-label;
-      margin-top: 1.5rem;
+      .description {
+        @include mobile-subheader;
+        color: $text-label;
+        margin-top: 1.5rem;
+      }
     }
     &--input {
       background-color: $text-bg-fill;
@@ -45,6 +59,7 @@
       height: 25vw;
       outline: none;
       margin-top: 0.5rem;
+      padding-left: 1rem;
       &:placeholder-shown {
         padding-left: 1rem;
         font-family: AvenirRegular;
@@ -57,6 +72,7 @@
     &--button {
       @include flex-column-nowrap;
       justify-content: center;
+      align-items: center;
       margin-top: 24px;
       .save {
         @include mobile-subheader;
@@ -75,6 +91,8 @@
       }
       .cancel {
         @include mobile-subheader;
+        @include flex-row-nowrap;
+        justify-content: center;
         width: 100%;
         height: 2.5rem;
         color: $text-link;
@@ -96,21 +114,72 @@
 
 @include medium {
   .create-new {
+    width: 576px;
+    height: 624px;
+    margin-left: 24px;
+    margin-right: 24px;
+    margin: auto;
+    @include flex-column-nowrap;
+    &__title {
+      @include desk-tablet-header;
+      color: $para-and-nav;
+      align-self: flex-start;
+    }
+    &__tablet-flex {
+      align-self: center;
+      margin-right: 40px;
+    }
     &__container {
+      @include flex-row-nowrap;
+      justify-content: space-evenly;
+      &--flex {
+        margin-right: 40px;
+        .title {
+          @include desk-tablet-labels;
+          margin-top: 24px;
+        }
+        .input {
+          width: 13.75rem;
+          height: 3rem;
+        }
+        .status__details {
+          &-text {
+            margin-right: 100px;
+          }
+        }
+      }
+      &--description {
+        @include desk-tablet-labels;
+        .description {
+          width: 480px;
+        }
+      }
+      &--input {
+        width: 480px;
+        height: 80px;
+      }
       &--button {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        margin-right: 60px;
+        .save {
+          height: 3rem;
+          width: 160px;
+        }
         .cancel {
           display: none;
         }
         .desk-cancel {
           display: unset;
           @include mobile-subheader;
-          width: 100%;
-          height: 2.5rem;
+          width: 160px;
+          height: 3rem;
+          background-color: unset;
           color: $text-link;
-          margin-top: 1.5rem;
           border-radius: 0.25rem;
           outline: none;
           text-decoration: none;
+          margin-right: 40px;
           &:hover {
             border: 0.0625rem solid $hover;
             cursor: pointer;
