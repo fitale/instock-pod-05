@@ -31,10 +31,23 @@
         }
       }
     }
+
+    .status__details {
+      display: flex;
+      justify-content: space-between;
+
+      &-text {
+        @include mobile-paragraph;
+      }
+
+    }
+
     &--description {
-      @include mobile-subheader;
-      color: $text-label;
-      margin-top: 1.5rem;
+      .description {
+        @include mobile-subheader;
+        color: $text-label;
+        margin-top: 1.5rem;
+      }
     }
     &--input {
       background-color: $text-bg-fill;
@@ -96,7 +109,29 @@
 
 @include medium {
   .create-new {
+    &__title {
+      @include desk-tablet-header;
+      color: $para-and-nav;
+    }
     &__container {
+      @include flex-row-nowrap;
+      justify-content: space-evenly;
+      &--flex {
+        .title {
+          @include desk-tablet-labels;
+          margin-top: 24px;
+        }
+        .input {
+          width: 220px;
+          height: 48px;
+        }
+      }
+      &--description {
+        .description {
+          width: 480px;
+          // button height
+        }
+      }
       &--button {
         .cancel {
           display: none;

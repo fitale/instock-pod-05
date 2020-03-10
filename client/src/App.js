@@ -8,14 +8,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
 import Warehouses from "./components/Warehouses";
-// import Product from "./components/Product";
+import Product from "./components/Product";
 import ModalComp from "./components/ModalComp";
 
 export default class App extends Component {
   state = {
     inventory: [],
-    warehouses: []
+    warehouses: [],
+    count: 0
   };
+
   getInventory() {
     return axios.get("http://localhost:5000/api/inventory");
   }
@@ -23,6 +25,12 @@ export default class App extends Component {
   getWarehouses() {
     return axios.get("http://localhost:5000/api/warehouses");
   }
+  updateTheState = props => {
+    console.log("props in update the state", props);
+    this.setState({
+      inventory: props
+    });
+  };
 
   async componentDidMount() {
     axios
@@ -50,6 +58,13 @@ export default class App extends Component {
     });
   }
 
+  //setup the on click event, using async to confirm the upload is done before redirect
+  async handleUploadSubmit(event) {
+    event.preventDefault();
+    this.props.closeModalNow();
+    await this.uploadAProduct(); //upload the video
+  }
+
   render() {
     if ((this.state.inventory.length || this.state.warehouses.length) === 0) {
       return (
@@ -66,7 +81,12 @@ export default class App extends Component {
               <Route
                 path="/"
                 render={props => (
-                  <Inventory {...props} inventory={this.state.inventory} />
+                  <Inventory
+                    {...props}
+                    updateTheState={this.updateTheState}
+                    deleteHandler={this.deleteHandler}
+                    inventory={this.state.inventory}
+                  />
                 )}
                 exact
               />
@@ -77,6 +97,7 @@ export default class App extends Component {
                 )}
               ></Route>
               <Route path="/createnew" component={ModalComp} />
+              <Route path="/:id" component={Product} />
             </Switch>
           </Router>
         </>

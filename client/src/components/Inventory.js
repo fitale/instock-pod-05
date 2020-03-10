@@ -5,11 +5,27 @@ import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
 import ModalComp from "./ModalComp";
 import Switch from 'react-switch';
+import Remove from "./Remove";
+
+const uuid = require("uuid/v4");
+
 
 export default class Inventory extends Component {
   state = {
-    showModal: false
+    showModal: false,
+    inventory: [],
+    isShowing: []
   };
+
+  componentDidMount() {
+    const tempArr = [];
+    this.props.inventory.forEach(item => {
+      tempArr.push(false);
+    });
+    this.setState({
+      isShowing: tempArr
+    });
+  }
 
   handleOpenModal = () => {
     this.setState({
@@ -23,11 +39,22 @@ export default class Inventory extends Component {
     });
   };
 
+  removeDropDown = (event, index, id) => {
+    const tempArr = this.state.isShowing;
+    tempArr[index] = true;
+    this.setState(
+      {
+        isShowing: tempArr
+      },
+      () => console.log(this.state.isShowing)
+    );
+  };
+
   render() {
-    let html = this.props.inventory.map(item => {
+    let html = this.props.inventory.map((item, index) => {
       return (
         <div key={item.id} className="inventory__content">
-          <div className="inventory__content--data">
+          <Link to="/:id" className="inventory__content--data">
             <h5 className="title">ITEM</h5>
             <div className="product-container">
               <h2 className="product-name">{item.name}</h2>
@@ -41,8 +68,8 @@ export default class Inventory extends Component {
             <h4 className="text">{item.quantity}</h4>
             <h5 className="title">STATUS</h5>
             <h4 className="text">{item.status}</h4>
-          </div>
-          <Link to="/:id" className="inventory__content--default-icon">
+          </Link>
+          <div className="inventory__content--default-icon">
             <svg
               margin="none"
               width="4"
@@ -50,18 +77,25 @@ export default class Inventory extends Component {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
+                onClick={event => this.removeDropDown(event, index, item.id)}
                 className="default-icon"
                 d="M0 2a2 2 0 114 0 2 2 0 01-4 0zm0 8a2 2 0 114 0 2 2 0 01-4 0zm0 8a2 2 0 114 0 2 2 0 01-4 0z"
                 fill="#AFAFAF"
                 fillRule="evenodd"
-              />
+              />{" "}
             </svg>
-          </Link>
+            {this.state.isShowing[index] && (
+              <Remove
+                deleteHandler={this.props.deleteHandler}
+                deleteItem={item.id}
+              />
+            )}
+          </div>
         </div>
       );
     });
     return (
-      <main className="inventory">
+      <main key={uuid()} className="inventory">
         <div className="inventory__upper">
           <h1 className="inventory__upper--title">Inventory</h1>
           <div className="inventory__upper--input">
@@ -84,7 +118,6 @@ export default class Inventory extends Component {
             className="inventory__fixed--add-icon"
           />
         </Link>
-
         <button
           onClick={this.handleOpenModal}
           to="/createnew"
@@ -97,10 +130,15 @@ export default class Inventory extends Component {
           />
         </button>
         <ReactModal
+          ariaHideApp={false}
           isOpen={this.state.showModal}
           contentLabel="Minimal Modal Example"
         >
-          <ModalComp closeModalNow={this.handleCloseModal} />
+          <ModalComp
+            closeModalNow={this.handleCloseModal}
+            inventory={this.props.inventory}
+            updateTheState={this.props.updateTheState}
+          />
         </ReactModal>
       </main>
     );

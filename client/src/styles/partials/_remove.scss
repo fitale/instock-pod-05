@@ -1,0 +1,20 @@
+.remove {
+  // display: none;
+  position: relative;
+  &__remove {
+    position: absolute;
+    right: 1px;
+    width: 160px;
+    height: 40px;
+    border: 1px solid $text-border;
+    border-radius: 4px;
+    outline: none;
+    &:hover {
+      cursor: pointer;
+      background-color: $text-bg-fill;
+    }
+    &--text {
+      @include mobile-paragraph;
+    }
+  }
+}
